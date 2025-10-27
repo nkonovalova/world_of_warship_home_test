@@ -1,0 +1,175 @@
+{
+	"status": "ok",
+	"data": {
+		"Cruiser": {
+			"icons": {
+				"default": "vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png",
+				"elite": "vehicle/types/Cruiser/elite_127b2a5f66ce04425e45721020a88ed6d6cad202e186f39577cbcd91dd205fe3.png",
+				"premium": "vehicle/types/Cruiser/premium_1114542bcd311c388080eea3a4d54a7ea6fdc8706b019fcbf16ace9951f3a000.png",
+				"special": "vehicle/types/Cruiser/special_333a61069a325ba8314cbbae96c1a345c7b03ce9dd6c10cd486cc53c1855ef68.png",
+				"normal": "vehicle/types/Cruiser/standard_44b68c918edc534e1367cb6512e9e8cc4d28aa54d237db820f1bbba867266742.png"
+			},
+			"sort_order": 3,
+			"localization": {
+				"shortmark": {},
+				"mark": {
+					"ru": "\u041a\u0440\u0435\u0439\u0441\u0435\u0440",
+					"fr": "Croiseur",
+					"en": "Cruiser",
+					"nl": "Kruiser",
+					"th": "\u0e40\u0e23\u0e37\u0e2d\u0e25\u0e32\u0e14\u0e15\u0e23\u0e30\u0e40\u0e27\u0e19",
+					"pt_br": "Cruzador",
+					"zh_cn": "\u5de1\u6d0b\u8230",
+					"ko": "\uc21c\uc591\ud568",
+					"de": "Kreuzer",
+					"tr": "Kruvaz\u00f6r",
+					"it": "Incrociatore",
+					"zh_sg": "\u5de1\u6d0b\u8230",
+					"uk": "\u041a\u0440\u0435\u0439\u0441\u0435\u0440",
+					"es": "Crucero",
+					"cs": "K\u0159i\u017en\u00edk",
+					"es_mx": "Crucero",
+					"ja": "\u5de1\u6d0b\u8266",
+					"pl": "Kr\u0105\u017cownik",
+					"zh_tw": "\u5de1\u6d0b\u8266"
+				}
+			}
+		},
+		"AirCarrier": {
+			"icons": {
+				"default": "vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png",
+				"elite": "vehicle/types/AirCarrier/elite_8c5dbbe68e07b0a72c57a04a3d98baadc528f058be3a2e7b198fabeb07172330.png",
+				"premium": "vehicle/types/AirCarrier/premium_4516ee494bb0396e51796cebff5e45c3f448d9790e0a58082057b8949ed9a3f8.png",
+				"special": "vehicle/types/AirCarrier/special_f75e4cad6399ce68536c0ed26af761c905be8fa208d664915d20fde55b1b6db5.png",
+				"normal": "vehicle/types/AirCarrier/standard_9f372d47b4fa5b5bbd79a3aaac816cb8d5343fa93949cce8934d94b84751b88e.png"
+			},
+			"sort_order": 5,
+			"localization": {
+				"shortmark": {},
+				"mark": {
+					"ru": "\u0410\u0432\u0438\u0430\u043d\u043e\u0441\u0435\u0446",
+					"fr": "Porte-avions",
+					"en": "Aircraft Carrier",
+					"nl": "Vliegdekschip",
+					"th": "\u0e40\u0e23\u0e37\u0e2d\u0e1a\u0e23\u0e23\u0e17\u0e38\u0e01\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e1a\u0e34\u0e19",
+					"pt_br": "Porta-Avi\u00f5es",
+					"zh_cn": "\u822a\u7a7a\u6bcd\u8230",
+					"ko": "\ud56d\uacf5\ubaa8\ud568",
+					"de": "Flugzeugtr\u00e4ger",
+					"tr": "U\u00e7ak Gemisi",
+					"it": "Portaerei",
+					"zh_sg": "\u822a\u7a7a\u6bcd\u8230",
+					"uk": "\u0410\u0432\u0456\u0430\u043d\u043e\u0441\u0435\u0446\u044c",
+					"es": "Portaaviones",
+					"cs": "Letadlov\u00e1 lo\u010f",
+					"es_mx": "Portaaviones",
+					"ja": "\u822a\u7a7a\u6bcd\u8266",
+					"pl": "Lotniskowiec",
+					"zh_tw": "\u822a\u7a7a\u6bcd\u8266"
+				}
+			}
+		},
+		"Battleship": {
+			"icons": {
+				"default": "vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png",
+				"elite": "vehicle/types/Battleship/elite_9fe36e82e214ad6f8dcc305bf8d10d3d0fe35c64628611d9a39f3af01382a567.png",
+				"premium": "vehicle/types/Battleship/premium_1d0cabf1997104fd727039ab9c09819260343ab3a9e862f361434d7f42270eb3.png",
+				"special": "vehicle/types/Battleship/special_fdb3e9eabba1009b1c4adb7b370a68a29483aa7a0fe11935b2405792c4968d71.png",
+				"normal": "vehicle/types/Battleship/standard_1468cf2ed1dc129ec4db4d9d18306bd06abb0d6b08c805dc94fe23ce6187c119.png"
+			},
+			"sort_order": 4,
+			"localization": {
+				"shortmark": {},
+				"mark": {
+					"ru": "\u041b\u0438\u043d\u043a\u043e\u0440",
+					"fr": "Cuirass\u00e9",
+					"en": "Battleship",
+					"nl": "Slagschip",
+					"th": "\u0e40\u0e23\u0e37\u0e2d\u0e1b\u0e23\u0e30\u0e08\u0e31\u0e0d\u0e1a\u0e32\u0e19",
+					"pt_br": "Encoura\u00e7ado",
+					"zh_cn": "\u6218\u5217\u8230",
+					"ko": "\uc804\ud568",
+					"de": "Schlachtschiff",
+					"tr": "Z\u0131rhl\u0131",
+					"it": "Corazzata",
+					"zh_sg": "\u6218\u5217\u8230",
+					"uk": "\u041b\u0456\u043d\u043a\u043e\u0440",
+					"es": "Acorazado",
+					"cs": "Bitevn\u00ed lo\u010f",
+					"es_mx": "Acorazado",
+					"ja": "\u6226\u8266",
+					"pl": "Pancernik",
+					"zh_tw": "\u4e3b\u529b\u8266"
+				}
+			}
+		},
+		"Destroyer": {
+			"icons": {
+				"default": "vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png",
+				"elite": "vehicle/types/Destroyer/elite_d4fa1bfbf1f8ca4c5a9ae5e92ccfd4ba66369d93b4e6e3f3880551059cecda22.png",
+				"premium": "vehicle/types/Destroyer/premium_9ffc494df739f989c98f2dd3a4e40887299a30d3dfd5b146e85d7ddd08f63744.png",
+				"special": "vehicle/types/Destroyer/special_5d797363651721d76cdb3439cd23845b7efcb8af4c5c3f76cc41b2537b6fc415.png",
+				"normal": "vehicle/types/Destroyer/standard_357acc9fc0e2f7d98f047c99edffad359a8c45f2093024400fef2b9abbaf3a59.png"
+			},
+			"sort_order": 2,
+			"localization": {
+				"shortmark": {},
+				"mark": {
+					"ru": "\u042d\u0441\u043c\u0438\u043d\u0435\u0446",
+					"fr": "Destroyer",
+					"en": "Destroyer",
+					"nl": "Torpedobootjager",
+					"th": "\u0e40\u0e23\u0e37\u0e2d\u0e1e\u0e34\u0e06\u0e32\u0e15",
+					"pt_br": "Contratorpedeiro",
+					"zh_cn": "\u9a71\u9010\u8230",
+					"ko": "\uad6c\ucd95\ud568",
+					"de": "Zerst\u00f6rer",
+					"tr": "Muhrip",
+					"it": "Cacciatorpediniere",
+					"zh_sg": "\u9a71\u9010\u8230",
+					"uk": "\u0415\u0441\u043c\u0456\u043d\u0435\u0446\u044c",
+					"es": "Destructor",
+					"cs": "Torp\u00e9doborec",
+					"es_mx": "Destructor",
+					"ja": "\u99c6\u9010\u8266",
+					"pl": "Niszczyciel",
+					"zh_tw": "\u9a45\u9010\u8266"
+				}
+			}
+		},
+		"Submarine": {
+			"icons": {
+				"default": "vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png",
+				"elite": "vehicle/types/Submarine/elite_48fb6cc4ac86f63e8833e16ac1f7e996f86da5884c3e1b87da9b5ea324f3d5e4.png",
+				"premium": "vehicle/types/Submarine/premium_2da34d2e1f5f4934406d60eb020c1b107857405618c03bbe7710d502b24a5b8b.png",
+				"special": "vehicle/types/Submarine/special_ac6b2659676bb2f9f46f099fd4ad26d30f2fa64d76f6487f382af721ac6bee4f.png",
+				"normal": "vehicle/types/Submarine/standard_261525e5aae827700eaad3b5c3ab72d1721446ecab80226394fd30e9186d8a2d.png"
+			},
+			"sort_order": 1,
+			"localization": {
+				"shortmark": {},
+				"mark": {
+					"ru": "\u041f\u043e\u0434\u0432\u043e\u0434\u043d\u0430\u044f \u043b\u043e\u0434\u043a\u0430",
+					"fr": "Sous-marin",
+					"en": "Submarine",
+					"nl": "Onderzee\u00ebr",
+					"th": "\u0e40\u0e23\u0e37\u0e2d\u0e14\u0e33\u0e19\u0e49\u0e33",
+					"pt_br": "Submarino",
+					"zh_cn": "\u6f5c\u8247",
+					"ko": "\uc7a0\uc218\ud568",
+					"de": "U-Boot",
+					"tr": "Denizalt\u0131",
+					"it": "Sommergibile",
+					"zh_sg": "\u6f5c\u8247",
+					"uk": "\u041f\u0456\u0434\u0432\u043e\u0434\u043d\u0438\u0439 \u0447\u043e\u0432\u0435\u043d",
+					"es": "Submarino",
+					"cs": "Ponorka",
+					"es_mx": "Submarino",
+					"ja": "\u6f5c\u6c34\u8266",
+					"pl": "Okr\u0119t podwodny",
+					"zh_tw": "\u6f5b\u6c34\u8266"
+				}
+			}
+		}
+	}
+}

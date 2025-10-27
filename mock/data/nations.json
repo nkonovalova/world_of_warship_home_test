@@ -1,0 +1,499 @@
+{
+	"status": "ok",
+	"data": [
+		{
+			"name": "ussr",
+			"icons": {
+				"large": "nation_flags/large/flag_Russia_a23dac134108e86530943971aed79d13fb6eab45748b539826c3538662bfe5d1.png",
+				"default": "nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png",
+				"local_large": "gui/nation_flags/big/flag_Russia.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Russia.png",
+				"small": "nation_flags/small/flag_Russia_2096a97e46c74332d0579c54e5a242a2ff4a184d227ca50a36cba5f0875d7e48.png",
+				"local_small": "gui/nation_flags/small/flag_Russia.png",
+				"tiny": "nation_flags/tiny/flag_Russia_1113e2d5311f815f1da7b80ea227d7ce57db3e1f476690cdcfc949011ff69283.png"
+			},
+			"color": 14764062,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0421\u0421\u0421\u0420",
+					"fr": "URSS",
+					"en": "U.S.S.R.",
+					"nl": "Sovjet-Unie",
+					"uk": "\u0421\u0420\u0421\u0420",
+					"pt_br": "U.R.S.S.",
+					"zh_cn": "S\u7cfb",
+					"tr": "SSCB",
+					"de": "UdSSR",
+					"ko": "\uc18c\ub828",
+					"it": "U.R.S.S.",
+					"pl": "Z.S.R.R.",
+					"th": "\u0e2a\u0e2b\u0e20\u0e32\u0e1e\u0e42\u0e0b\u0e40\u0e27\u0e35\u0e22\u0e15",
+					"cs": "SSSR",
+					"es_mx": "U.R.S.S.",
+					"zh_sg": "\u82cf\u8054",
+					"ja": "\u30bd\u9023",
+					"es": "URSS",
+					"zh_tw": "\u8607\u806f"
+				}
+			},
+			"id": 0
+		},
+		{
+			"name": "japan",
+			"icons": {
+				"large": "nation_flags/large/flag_Japan_dc7a62826070d782f60b959d0b00fa9548d97a3893f08824d2e2dece8df3ce78.png",
+				"default": "nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png",
+				"local_large": "gui/nation_flags/big/flag_Japan.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Japan.png",
+				"small": "nation_flags/small/flag_Japan_e342ec07b9df580383a85abc178ac050901763e92607376b50a093c02b3abed0.png",
+				"local_small": "gui/nation_flags/small/flag_Japan.png",
+				"tiny": "nation_flags/tiny/flag_Japan_afff8f2e1e23cdf6b9314f80cca4fb85af40cfbe7812a9ccc707fd24ed207557.png"
+			},
+			"color": 13752795,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u042f\u043f\u043e\u043d\u0438\u044f",
+					"fr": "Japon",
+					"en": "Japan",
+					"nl": "Japan",
+					"uk": "\u042f\u043f\u043e\u043d\u0456\u044f",
+					"pt_br": "Jap\u00e3o",
+					"zh_cn": "R\u7cfb",
+					"tr": "Japonya",
+					"de": "Japan",
+					"ko": "\uc77c\ubcf8",
+					"it": "Giappone",
+					"pl": "Japonia",
+					"th": "\u0e0d\u0e35\u0e48\u0e1b\u0e38\u0e48\u0e19",
+					"cs": "Japonsko",
+					"es_mx": "Jap\u00f3n",
+					"zh_sg": "\u65e5\u672c",
+					"ja": "\u65e5\u672c",
+					"es": "Jap\u00f3n",
+					"zh_tw": "\u65e5\u672c"
+				}
+			},
+			"id": 1
+		},
+		{
+			"name": "usa",
+			"icons": {
+				"large": "nation_flags/large/flag_USA_bfe874dbd91cdd9e7b77e378d7efeb221931b9b25d24e79a138fe4801050966c.png",
+				"default": "nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png",
+				"local_large": "gui/nation_flags/big/flag_USA.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_USA.png",
+				"small": "nation_flags/small/flag_USA_1b4b2220fa11809cdd5179fa188ef7651382714b66cbbe12d49a0744dff52495.png",
+				"local_small": "gui/nation_flags/small/flag_USA.png",
+				"tiny": "nation_flags/tiny/flag_USA_a608afcc194232095536ebc93508eb7b4b68cf46bc3600cd28b4afd0ad9a38b3.png"
+			},
+			"color": 5549009,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0421\u0428\u0410",
+					"fr": "USA",
+					"en": "U.S.A.",
+					"nl": "V.S.",
+					"uk": "\u0421\u0428\u0410",
+					"pt_br": "EUA",
+					"zh_cn": "M\u7cfb",
+					"tr": "ABD",
+					"de": "USA",
+					"ko": "\ubbf8\uad6d",
+					"it": "U.S.A.",
+					"pl": "U.S.A.",
+					"th": "\u0e2a\u0e2b\u0e23\u0e31\u0e10\u0e2d\u0e40\u0e21\u0e23\u0e34\u0e01\u0e32",
+					"cs": "USA",
+					"es_mx": "EE.\u00a0UU.",
+					"zh_sg": "\u7f8e\u56fd",
+					"ja": "\u30a2\u30e1\u30ea\u30ab",
+					"es": "EE.\u00a0UU.",
+					"zh_tw": "\u7f8e\u570b"
+				}
+			},
+			"id": 2
+		},
+		{
+			"name": "uk",
+			"icons": {
+				"large": "nation_flags/large/flag_United_Kingdom_a1656b0242541a0e42ecb717150f626c90a4847a097a1088de38409527787636.png",
+				"default": "nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png",
+				"local_large": "gui/nation_flags/big/flag_United_Kingdom.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_United_Kingdom.png",
+				"small": "nation_flags/small/flag_United_Kingdom_447115c659293c9d4cc8f2714d27704a35ba98f17ff4b92b3761f03936c05e1a.png",
+				"local_small": "gui/nation_flags/small/flag_United_Kingdom.png",
+				"tiny": "nation_flags/tiny/flag_United_Kingdom_d6308791bceab9314e41018c12d68f2f809d8f92296e77459708373cd6a94113.png"
+			},
+			"color": 2719672,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u044f",
+					"fr": "Royaume-Uni",
+					"en": "U.K.",
+					"nl": "V.K.",
+					"uk": "\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0456\u044f",
+					"pt_br": "Reino Unido",
+					"zh_cn": "Y\u7cfb",
+					"tr": "\u0130ngiltere",
+					"de": "GB",
+					"ko": "\uc601\uad6d",
+					"it": "U.K.",
+					"pl": "Zjedn. Kr\u00f3lestwo",
+					"th": "\u0e2a\u0e2b\u0e23\u0e32\u0e0a\u0e2d\u0e32\u0e13\u0e32\u0e08\u0e31\u0e01\u0e23",
+					"cs": "Brit\u00e1nie",
+					"es_mx": "Reino Unido",
+					"zh_sg": "\u82f1\u56fd",
+					"ja": "\u30a4\u30ae\u30ea\u30b9",
+					"es": "Reino Unido",
+					"zh_tw": "\u82f1\u570b"
+				}
+			},
+			"id": 3
+		},
+		{
+			"name": "germany",
+			"icons": {
+				"large": "nation_flags/large/flag_Germany_6ebc035001d082f9cc22317e1184be7806ecf34c7b2857ed65fececc36ec624e.png",
+				"default": "nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png",
+				"local_large": "gui/nation_flags/big/flag_Germany.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Germany.png",
+				"small": "nation_flags/small/flag_Germany_35d04fe7e0bf9b85a2ae507a4d4539bcbe9ea250d04480345156825398edcff8.png",
+				"local_small": "gui/nation_flags/small/flag_Germany.png",
+				"tiny": "nation_flags/tiny/flag_Germany_8f3e3f4bb152e80cc8fb2cc34d426c6d85d57b72014c768883384055a2c2f3f7.png"
+			},
+			"color": 8358796,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f",
+					"fr": "Allemagne",
+					"en": "Germany",
+					"nl": "Duitsland",
+					"uk": "\u041d\u0456\u043c\u0435\u0447\u0447\u0438\u043d\u0430",
+					"pt_br": "Alemanha",
+					"zh_cn": "D\u7cfb",
+					"tr": "Almanya",
+					"de": "Deutschland",
+					"ko": "\ub3c5\uc77c",
+					"it": "Germania",
+					"pl": "Niemcy",
+					"th": "\u0e40\u0e22\u0e2d\u0e23\u0e21\u0e19\u0e35",
+					"cs": "N\u011bmecko",
+					"es_mx": "Alemania",
+					"zh_sg": "\u5fb7\u56fd",
+					"ja": "\u30c9\u30a4\u30c4",
+					"es": "Alemania",
+					"zh_tw": "\u5fb7\u570b"
+				}
+			},
+			"id": 4
+		},
+		{
+			"name": "france",
+			"icons": {
+				"large": "nation_flags/large/flag_France_a1658fa7ce53d10df1b95e71e667a1aa32f56b0909beb7404e20a0ec5b82af07.png",
+				"default": "nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png",
+				"local_large": "gui/nation_flags/big/flag_France.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_France.png",
+				"small": "nation_flags/small/flag_France_56a58c5e668eb6c54ac0b196fe77c4d16a9718b8ff5aa1b102c64b925449bdc3.png",
+				"local_small": "gui/nation_flags/small/flag_France.png",
+				"tiny": "nation_flags/tiny/flag_France_d67f8ec126611004d427736132c2ce3b3feace2e6177bdc9e1ff1be6f3afdb26.png"
+			},
+			"color": 1788269,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0424\u0440\u0430\u043d\u0446\u0438\u044f",
+					"fr": "France",
+					"en": "France",
+					"nl": "Frankrijk",
+					"uk": "\u0424\u0440\u0430\u043d\u0446\u0456\u044f",
+					"pt_br": "Fran\u00e7a",
+					"zh_cn": "F\u7cfb",
+					"tr": "Fransa",
+					"de": "Frankreich",
+					"ko": "\ud504\ub791\uc2a4",
+					"it": "Francia",
+					"pl": "Francja",
+					"th": "\u0e1d\u0e23\u0e31\u0e48\u0e07\u0e40\u0e28\u0e2a",
+					"cs": "Francie",
+					"es_mx": "Francia",
+					"zh_sg": "\u6cd5\u56fd",
+					"ja": "\u30d5\u30e9\u30f3\u30b9",
+					"es": "Francia",
+					"zh_tw": "\u6cd5\u570b"
+				}
+			},
+			"id": 5
+		},
+		{
+			"name": "italy",
+			"icons": {
+				"large": "nation_flags/large/flag_Italy_1c3ee585f3132d89f71ffadfbbf529b23cb7acade1c1d5b6f9be5687b7770dc8.png",
+				"default": "nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png",
+				"local_large": "gui/nation_flags/big/flag_Italy.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Italy.png",
+				"small": "nation_flags/small/flag_Italy_56198e82a47ece71c1a79662a246de425f605033b41cd0bd1cd50b71b41676f4.png",
+				"local_small": "gui/nation_flags/small/flag_Italy.png",
+				"tiny": "nation_flags/tiny/flag_Italy_52727a3d376751ca3c4547750d0330100c08052581a387a7acadde7503a76463.png"
+			},
+			"color": 4176426,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0418\u0442\u0430\u043b\u0438\u044f",
+					"fr": "Italie",
+					"en": "Italy",
+					"nl": "Itali\u00eb",
+					"uk": "\u0406\u0442\u0430\u043b\u0456\u044f",
+					"pt_br": "It\u00e1lia",
+					"zh_cn": "I\u7cfb",
+					"tr": "\u0130talya",
+					"de": "Italien",
+					"ko": "\uc774\ud0c8\ub9ac\uc544",
+					"it": "Italia",
+					"pl": "W\u0142ochy",
+					"th": "\u0e2d\u0e34\u0e15\u0e32\u0e25\u0e35",
+					"cs": "It\u00e1lie",
+					"es_mx": "Italia",
+					"zh_sg": "\u610f\u5927\u5229",
+					"ja": "\u30a4\u30bf\u30ea\u30a2",
+					"es": "Italia",
+					"zh_tw": "\u7fa9\u5927\u5229"
+				}
+			},
+			"id": 6
+		},
+		{
+			"name": "europe",
+			"icons": {
+				"large": "nation_flags/large/flag_Europe_f0cc09a6c46f35f01c16395f2e57e67441930ee06a9b3ad57763620493c58054.png",
+				"default": "nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png",
+				"local_large": "gui/nation_flags/big/flag_Europe.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Europe.png",
+				"small": "nation_flags/small/flag_Europe_8faa587e2808905b00609fe38106b8faa37695ee1df9130e767c740f76046b85.png",
+				"local_small": "gui/nation_flags/small/flag_Europe.png",
+				"tiny": "nation_flags/tiny/flag_Europe_66b735f7c63b1fbc05c33f9f6289a5c5151eb9f7829f407ed4a9966188f19ff4.png"
+			},
+			"color": 16763904,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0415\u0432\u0440\u043e\u043f\u0430",
+					"fr": "Europe",
+					"en": "Europe",
+					"nl": "Europa",
+					"uk": "\u0404\u0432\u0440\u043e\u043f\u0430",
+					"pt_br": "Europa",
+					"zh_cn": "E\u7cfb",
+					"tr": "Avrupa",
+					"de": "Europa",
+					"ko": "\uc720\ub7fd",
+					"it": "Europa",
+					"pl": "Europa",
+					"th": "\u0e22\u0e38\u0e42\u0e23\u0e1b",
+					"cs": "Evropa",
+					"es_mx": "Europa",
+					"zh_sg": "\u6b27\u6d32",
+					"ja": "\u30e8\u30fc\u30ed\u30c3\u30d1",
+					"es": "Europa",
+					"zh_tw": "\u6b50\u6d32"
+				}
+			},
+			"id": 7
+		},
+		{
+			"name": "pan_asia",
+			"icons": {
+				"large": "nation_flags/large/flag_Pan_Asia_43c01cae40c13f6ec165ebef027a7fada24375ac05e018aaa9068ebfef2d8915.png",
+				"default": "nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png",
+				"local_large": "gui/nation_flags/big/flag_Pan_Asia.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Pan_Asia.png",
+				"small": "nation_flags/small/flag_Pan_Asia_52736e629f91a9fe8647ef1a05e8973f32471aef24c3df29caac8d84e59917d8.png",
+				"local_small": "gui/nation_flags/small/flag_Pan_Asia.png",
+				"tiny": "nation_flags/tiny/flag_Pan_Asia_fae90b7297e33378dbd81d57f61baa5671f67f363435768f1c9f66b39168730b.png"
+			},
+			"color": 15774479,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u041f\u0430\u043d-\u0410\u0437\u0438\u044f",
+					"fr": "Asie",
+					"en": "Pan-Asia",
+					"nl": "Pan-Azi\u00eb",
+					"uk": "\u041f\u0430\u043d-\u0410\u0437\u0456\u044f",
+					"pt_br": "Pan-\u00c1sia",
+					"zh_cn": "C\u7cfb",
+					"tr": "Pan-Asya",
+					"de": "Panasien",
+					"ko": "\ubc94\uc544\uc2dc\uc544",
+					"it": "Pan-Asia",
+					"pl": "Azja Wschodnia",
+					"th": "\u0e23\u0e27\u0e21\u0e0a\u0e32\u0e15\u0e34\u0e40\u0e2d\u0e40\u0e0a\u0e35\u0e22",
+					"cs": "Panasie",
+					"es_mx": "Pan-Asia",
+					"zh_sg": "\u6cdb\u4e9a",
+					"ja": "\u30d1\u30f3\u30a2\u30b8\u30a2",
+					"es": "Panasia",
+					"zh_tw": "\u6cdb\u4e9e"
+				}
+			},
+			"id": 8
+		},
+		{
+			"name": "commonwealth",
+			"icons": {
+				"large": "nation_flags/large/flag_Commonwealth_8b4d3ea923bbcff5194ed7ba63369ff3f8067581b03b4f528bb75b516df40d31.png",
+				"default": "nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png",
+				"local_large": "gui/nation_flags/big/flag_Commonwealth.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Commonwealth.png",
+				"small": "nation_flags/small/flag_Commonwealth_f328561f17ef8caeeb094ef825da4587f78b78b2bd3dd09d66717e5ef359e77f.png",
+				"local_small": "gui/nation_flags/small/flag_Commonwealth.png",
+				"tiny": "nation_flags/tiny/flag_Commonwealth_e708f80d98342c6cc35ec08bdfebdd98015056ca40ef828fbbd44e57aefd7715.png"
+			},
+			"color": 15789327,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0421\u043e\u0434\u0440\u0443\u0436\u0435\u0441\u0442\u0432\u043e",
+					"fr": "Commonwealth",
+					"en": "Commonwealth",
+					"nl": "Commonwealth",
+					"uk": "\u0421\u043f\u0456\u0432\u0434\u0440\u0443\u0436\u043d\u0456\u0441\u0442\u044c",
+					"pt_br": "Comunidade das Na\u00e7\u00f5es",
+					"zh_cn": "CW\u7cfb",
+					"tr": "Milletler Toplulu\u011fu",
+					"de": "Commonwealth",
+					"ko": "\uc601\uc5f0\ubc29",
+					"it": "Commonwealth",
+					"pl": "Wsp\u00f3lnota",
+					"th": "\u0e40\u0e04\u0e23\u0e37\u0e2d\u0e08\u0e31\u0e01\u0e23\u0e20\u0e1e",
+					"cs": "Commonwealth",
+					"es_mx": "Commonwealth",
+					"zh_sg": "\u8054\u90a6",
+					"ja": "\u30a4\u30ae\u30ea\u30b9\u9023\u90a6",
+					"es": "Commonwealth",
+					"zh_tw": "\u806f\u90a6"
+				}
+			},
+			"id": 9
+		},
+		{
+			"name": "pan_america",
+			"icons": {
+				"large": "nation_flags/large/flag_Pan_America_cd8032e6cfcd6850d0a256810ca328539b97d01d2091b42e8376cfe033a774cb.png",
+				"default": "nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png",
+				"local_large": "gui/nation_flags/big/flag_Pan_America.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Pan_America.png",
+				"small": "nation_flags/small/flag_Pan_America_b5a862eb267c57c58c63401bee8d63f243538429166a238fcb8ed4d191165a30.png",
+				"local_small": "gui/nation_flags/small/flag_Pan_America.png",
+				"tiny": "nation_flags/tiny/flag_Pan_America_66683fa0d219a205edc85a0afb7155c3746fa17c637393c11ed54e3cc22f3616.png"
+			},
+			"color": 16737792,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u041f\u0430\u043d-\u0410\u043c\u0435\u0440\u0438\u043a\u0430",
+					"fr": "PanAm\u00e9rique",
+					"en": "Pan-America",
+					"nl": "Pan-Amerika",
+					"uk": "\u041f\u0430\u043d-\u0410\u043c\u0435\u0440\u0438\u043a\u0430",
+					"pt_br": "Pan-Am\u00e9rica",
+					"zh_cn": "FM\u7cfb",
+					"tr": "Pan-Amerika",
+					"de": "Panamerika",
+					"ko": "\ubc94\uc544\uba54\ub9ac\uce74",
+					"it": "Pan-America",
+					"pl": "Panameryka",
+					"th": "\u0e23\u0e27\u0e21\u0e2d\u0e40\u0e21\u0e23\u0e34\u0e01\u0e32",
+					"cs": "Panamerika",
+					"es_mx": "Panam\u00e9rica",
+					"zh_sg": "\u6cdb\u7f8e",
+					"ja": "\u30d1\u30f3\u30a2\u30e1\u30ea\u30ab",
+					"es": "Panam\u00e9rica",
+					"zh_tw": "\u6cdb\u7f8e"
+				}
+			},
+			"id": 11
+		},
+		{
+			"name": "netherlands",
+			"icons": {
+				"large": "nation_flags/large/flag_Netherlands_1965c4d9d9d6583d4e78729ef6d079e59f074f3f9e98cab6a0cb3fe2e2f93698.png",
+				"default": "nation_flags/small/flag_Netherlands_95aaa1a8837aaa25b7f8ee01481e08d219f713a314490ed741dd7dcf677dd143.png",
+				"local_large": "gui/nation_flags/big/flag_Netherlands.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Netherlands.png",
+				"small": "nation_flags/small/flag_Netherlands_95aaa1a8837aaa25b7f8ee01481e08d219f713a314490ed741dd7dcf677dd143.png",
+				"local_small": "gui/nation_flags/small/flag_Netherlands.png",
+				"tiny": "nation_flags/tiny/flag_Netherlands_f706c692f890e876aeb549103873b16ee8b00ba7bbb4d0c3dd9997894e987bd3.png"
+			},
+			"color": 16711782,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u041d\u0438\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u044b",
+					"fr": "Pays-Bas",
+					"en": "The Netherlands",
+					"nl": "Nederland",
+					"uk": "\u041d\u0456\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u0438",
+					"pt_br": "Os Pa\u00edses Baixos",
+					"zh_cn": "HL\u7cfb",
+					"tr": "Hollanda",
+					"de": "Die Niederlande",
+					"ko": "\ub124\ub35c\ub780\ub4dc",
+					"it": "Paesi Bassi",
+					"pl": "Holandia",
+					"th": "\u0e40\u0e19\u0e40\u0e18\u0e2d\u0e23\u0e4c\u0e41\u0e25\u0e19\u0e14\u0e4c",
+					"cs": "Nizozemsko",
+					"es_mx": "Los Pa\u00edses Bajos",
+					"zh_sg": "\u8377\u5170",
+					"ja": "\u30aa\u30e9\u30f3\u30c0",
+					"es": "Los Pa\u00edses Bajos",
+					"zh_tw": "\u8377\u862d"
+				}
+			},
+			"id": 12
+		},
+		{
+			"name": "spain",
+			"icons": {
+				"large": "nation_flags/large/flag_Spain_e7b90b91cbcbd6ea2191c134e9713dbcb0aaebf0c670911f8a527610fcdf293a.png",
+				"default": "nation_flags/small/flag_Spain_956316c955d6d1ac7b623852fe4a3ba35d401d81ecf4296c3f927d8a1ef23059.png",
+				"local_large": "gui/nation_flags/big/flag_Spain.png",
+				"local_tiny": "gui/nation_flags/tiny/flag_Spain.png",
+				"small": "nation_flags/small/flag_Spain_956316c955d6d1ac7b623852fe4a3ba35d401d81ecf4296c3f927d8a1ef23059.png",
+				"local_small": "gui/nation_flags/small/flag_Spain.png",
+				"tiny": "nation_flags/tiny/flag_Spain_faddbe9a35a81f9797e36142196ce81595a762969fd57c171f8866b4cf9b9f54.png"
+			},
+			"color": 9525451,
+			"tags": ["inTree"],
+			"localization": {
+				"mark": {
+					"ru": "\u0418\u0441\u043f\u0430\u043d\u0438\u044f",
+					"fr": "Espagne",
+					"en": "Spain",
+					"nl": "Spanje",
+					"uk": "\u0406\u0441\u043f\u0430\u043d\u0456\u044f",
+					"pt_br": "Espanha",
+					"zh_cn": "X\u7cfb",
+					"tr": "\u0130spanya",
+					"de": "Spanien",
+					"ko": "\uc2a4\ud398\uc778",
+					"it": "Spagna",
+					"pl": "Hiszpania",
+					"th": "\u0e2a\u0e40\u0e1b\u0e19",
+					"cs": "\u0160pan\u011blsko",
+					"es_mx": "Espa\u00f1a",
+					"zh_sg": "\u897f\u73ed\u7259",
+					"ja": "\u30b9\u30da\u30a4\u30f3",
+					"es": "Espa\u00f1a",
+					"zh_tw": "\u897f\u73ed\u7259"
+				}
+			},
+			"id": 13
+		}
+	]
+}

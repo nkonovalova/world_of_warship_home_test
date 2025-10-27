@@ -1,0 +1,322 @@
+openapi: 3.0.0
+info:
+  title: World of Warships  Data API
+  version: 1.0.0
+  description: >
+    API предоставляет статические данные о нациях и типах кораблей World of Warships.
+servers:
+  - url: https://vortex.worldofwarships.eu/api/encyclopedia/en/
+    description: Api server url
+
+paths:
+  /nations:
+    get:
+      summary: Get a list of nations
+      responses:
+        "200":
+          description: Successful response with a list of nations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Nation"
+  /vehicle-types:
+    get:
+      summary: Get a list of vehicle types
+      responses:
+        "200":
+          description: Successful response with vehicle type data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    $ref: "#/components/schemas/VehicleTypesCommon"
+
+  /vehicles:
+    get:
+      summary: Get ship definitions
+      responses:
+        "200":
+          description: Successful response with a collection of ships
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    $ref: "#/components/schemas/Vehicles"
+
+  /media_path:
+    get:
+      summary: Get the base URL for icon resources
+      responses:
+        "200":
+          description: Successful response with the icon base URL
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: Request execution status
+                    example: ok
+                  data:
+                    type: string
+                    format: uri
+                    description: Base URL for accessing icon resources
+                    example: https://wows-gloss-icons.wgcdn.co/icons/
+
+components:
+  schemas:
+    Nation:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique nation identifier
+          example: 0
+        name:
+          type: string
+          description: Internal nation name
+          example: ussr
+        color:
+          type: integer
+          description: Nation color represented as an integer (RGB)
+          example: 14764062
+        tags:
+          type: array
+          description: List of tags associated with the nation
+          items:
+            type: string
+          example: ["inTree"]
+        icons:
+          type: object
+          description: Paths to icons in different sizes
+          properties:
+            large:
+              type: string
+              example: nation_flags/large/flag_Russia.png
+            default:
+              type: string
+            small:
+              type: string
+            tiny:
+              type: string
+            local_large:
+              type: string
+            local_small:
+              type: string
+            local_tiny:
+              type: string
+        localization:
+          type: object
+          description: Localized nation names
+          properties:
+            mark:
+              type: object
+              additionalProperties:
+                type: string
+              example:
+                ru: "СССР"
+                en: "U.S.S.R."
+                fr: "URSS"
+
+    Nations:
+      type: array
+      description: List of nation objects
+      items:
+        $ref: "#/components/schemas/Nation"
+    VehicleType:
+      type: object
+      description: Vehicle type entity
+      properties:
+        icons:
+          type: object
+          description: Paths to icons for this vehicle type
+          properties:
+            default:
+              type: string
+              example: vehicle/types/Cruiser/standard.png
+            elite:
+              type: string
+            premium:
+              type: string
+            special:
+              type: string
+            normal:
+              type: string
+        sort_order:
+          type: integer
+          description: Order value for sorting vehicle types
+          example: 3
+        localization:
+          type: object
+          description: Localized names for the vehicle type
+          properties:
+            shortmark:
+              type: object
+              additionalProperties: true
+              description: Optional short localization marks
+            mark:
+              type: object
+              additionalProperties:
+                type: string
+              description: Localized full names of the vehicle type
+              example:
+                en: "Cruiser"
+                ru: "Крейсер"
+                fr: "Croiseur"
+                de: "Kreuzer"
+
+    VehicleTypesCommon:
+      type: object
+      description: Map of available vehicle types keyed by name
+      additionalProperties:
+        $ref: "#/components/schemas/VehicleType"
+      example:
+        Cruiser:
+          sort_order: 3
+          icons:
+            default: vehicle/types/Cruiser/standard.png
+            elite: vehicle/types/Cruiser/elite.png
+          localization:
+            mark:
+              en: "Cruiser"
+              ru: "Крейсер"
+        Destroyer:
+          sort_order: 2
+          icons:
+            default: vehicle/types/Destroyer/standard.png
+          localization:
+            mark:
+              en: "Destroyer"
+              ru: "Эсминец"
+
+    Vehicle:
+      type: object
+      description: Ship entity with visual assets, localization, and metadata
+      properties:
+        level:
+          type: integer
+          description: Ship level or tier
+          example: 9
+        name:
+          type: string
+          description: Internal ship identifier
+          example: PJSB559_Black_Iwami
+        nation:
+          type: string
+          description: Nation the ship belongs to
+          example: japan
+        tags:
+          type: array
+          description: Classification tags describing the ship type or status
+          items:
+            type: string
+          example: ["Battleship", "special", "uiPremium", "canRent", "sellable"]
+        icons:
+          type: object
+          description: File paths for ship icons of various sizes and states
+          properties:
+            local_contour:
+              type: string
+              example: gui/ship_bars/PJSB559_h_bg.png
+            contour_alive:
+              type: string
+            contour_dead:
+              type: string
+            contour:
+              type: string
+            large:
+              type: string
+            medium:
+              type: string
+            small:
+              type: string
+            default:
+              type: string
+            local_small:
+              type: string
+            local_contour_dead:
+              type: string
+            local_contour_alive:
+              type: string
+          required:
+            - default
+        localization:
+          type: object
+          description: Localized content for names and descriptions
+          properties:
+            shortmark:
+              type: object
+              additionalProperties:
+                type: string
+              description: Short localized name of the ship
+              example:
+                en: "Iwami B"
+                ru: "Iwami B"
+            mark:
+              type: object
+              additionalProperties:
+                type: string
+              description: Full localized ship name
+              example:
+                en: "Iwami B"
+                ru: "Iwami B"
+            description:
+              type: object
+              additionalProperties:
+                type: string
+              description: Localized ship description text
+              example:
+                en: "One of the battleship projects developed in Japan in the mid-1930s..."
+                ru: "Вариант проекта линкора, разработанный в Японии в середине 1930-х гг."
+      required:
+        - name
+        - level
+        - nation
+
+    Vehicles:
+      type: object
+      description: Map of ship entries keyed by numeric ID
+      additionalProperties:
+        $ref: "#/components/schemas/Vehicle"
+      example:
+        "3708761808":
+          level: 9
+          name: PJSB559_Black_Iwami
+          nation: japan
+          tags: ["Battleship", "special", "uiPremium"]
+          icons:
+            default: vehicle/small/PJSB559.png
+          localization:
+            mark:
+              en: "Iwami B"
+              ru: "Iwami B"
+        "4074715120":
+          level: 10
+          name: PASB210_Louisiana
+          nation: usa
+          tags: ["Battleship", "upgradeable"]
+          icons:
+            default: vehicle/small/PASB210.png
+          localization:
+            mark:
+              en: "Louisiana"
+              ru: "Луизиана"
