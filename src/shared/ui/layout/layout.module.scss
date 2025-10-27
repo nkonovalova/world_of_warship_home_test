@@ -1,0 +1,99 @@
+@use "../../../shared/ui/variables.module" as vars;
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  background-color: #163146;
+  padding-top: 1rem;
+  grid-template-areas:
+    "header"
+    "content";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  color: vars.$color-font;
+
+  @media screen and (min-width: vars.$breakpoint-desktop) {
+    padding-top: 2rem;
+    grid-template-areas:
+    "sidebar-left header sidebar-right"
+    "sidebar-left content sidebar-right";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 220px 1fr 270px;
+    grid-column-gap: 10px;
+  }
+}
+
+.sidebar-left {
+  grid-area: sidebar-left;
+}
+
+.sidebar-right {
+  grid-area: sidebar-right;
+}
+
+.header {
+  grid-area: header;
+  padding: 0 1rem;
+
+  @media screen and (min-width: vars.$breakpoint-desktop){
+    padding: 0;
+  }
+}
+
+.content {
+  grid-area: content;
+  padding: 0 1rem;
+
+  @media screen and (min-width: vars.$breakpoint-desktop){
+    padding: 0;
+    margin-left: 10px;
+  }
+}
+
+.error {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10000; /* stay on top */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: #c0392b;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  min-width: 220px;
+  max-width: calc(100% - 2rem);
+  pointer-events: auto;
+  transform-origin: bottom right;
+  transform: translateY(8px) scale(0.995);
+}
+
+.errorMessage {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.errorClose {
+  flex: 0 0 auto;
+  background: transparent;
+  border: none;
+  color: vars.$color-font;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.errorClose:hover,
+.errorClose:focus {
+  background-color: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+
