@@ -44,9 +44,6 @@ function Layout({header, children, leftSidebar, rightSidebar, errorMessage}: Lay
                     </button>
                 </div>
             )}
-
-
-
         </div>
     )
 }

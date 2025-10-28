@@ -1,15 +1,16 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import { API_BASE_URL, API_NATIONS_URL } from "../../../shared/config/api.ts"
-import { NationsApiResponse } from "./types.ts"
+import { NationsApiResponseT } from "../model/types.ts"
 
 export const nationsApiSlice = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL }),
 	reducerPath: "nationsApi",
 	tagTypes: ["nations"],
 	endpoints: build => ({
-		getNations: build.query<NationsApiResponse, void>({
+		getNations: build.query<NationsApiResponseT, void>({
 			query: () => API_NATIONS_URL,
 			providesTags: ["nations"],
+			transformResponse: (response: { data: NationsApiResponseT }) => response.data,
 		}),
 	}),
 })

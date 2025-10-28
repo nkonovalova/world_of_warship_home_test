@@ -27,7 +27,7 @@ paths:
                     type: array
                     items:
                       $ref: "#/components/schemas/Nation"
-  /vehicle-types:
+  /vehicle_types_common:
     get:
       summary: Get a list of vehicle types
       responses:

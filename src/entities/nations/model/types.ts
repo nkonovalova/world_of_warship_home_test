@@ -1,3 +1,5 @@
+import {IconsI, LocalizationI} from "../../../shared/types/common.ts";
+
 export type NationMark = [
 	"ru",
 	"fr",
@@ -18,35 +20,18 @@ export type NationMark = [
 	"ja",
 	"es",
 	"zh_tw",
-]
+];
 
-// TODO: если используются те же типы Icons и Localization - вынести в shared
-export interface Icons {
-	large: string
-	small: string
-	tiny: string
-	default: string
-	local_large: string
-	local_small: string
-	local_tiny: string
+export interface NationI {
+	id?: number;
+	name?: string;
+	color?: number; // RGB as integer
+	tags?: string[];
+	icons?: IconsI;
+	localization?: LocalizationI;
 }
 
-export interface Localization {
-	mark: {
-		[key: string]: string
-	}
-}
-
-export type Nation = {
-	id: number
-	name: string
-	color: string
-	icons: Icons
-	tags: string[]
-	localization: Localization
-}
-
-export type NationsApiResponse = {
+export type NationsApiResponseT = {
 	status: string
-	data: Nation[]
+	data: NationI[]
 }

@@ -1,0 +1,1 @@
+export const FOREVER_TIME_INTERVAL = 3600 * 24 * 365; // for 1 year in seconds
