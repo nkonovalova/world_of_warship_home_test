@@ -7,6 +7,7 @@ import { useGetVehiclesQuery } from "../../entities/vehicles/store/vehiclesApiSl
 import VehicleList from "./ui/vehicleList/vehicleList.tsx"
 import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
 import Button from "../../shared/ui/button/button.tsx"
+import VehicleFilter from "../../features/vehicleFilter/vehicleFilter.tsx"
 
 function PageVehicles() {
 	const {
@@ -45,18 +46,23 @@ function PageVehicles() {
 
 	return (
 		<Layout header="Ships" isLoading={isLoading} errorMessage={errorMessage}>
-			<div>
-				<Checkbox name={"en"} label={"England"} />
-				<Button>Apply</Button>
-			</div>
-			{/*{!isLoading && (*/}
-			{/*	<VehicleList*/}
-			{/*		vehicles={vehiclesData || []}*/}
-			{/*		nations={nationsData || {}}*/}
-			{/*		vehicleTypes={vehicleTypesData || {}}*/}
-			{/*		mediaPath={mediaPathData || ""}*/}
-			{/*	/>*/}
-			{/*)}*/}
+			{!isLoading && (
+				<>
+					<div>
+						<VehicleFilter
+							nations={nationsData || {}}
+							vehicleTypes={vehicleTypesData || {}}
+							mediaPath={mediaPathData || ""}
+						/>
+					</div>
+					<VehicleList
+						vehicles={vehiclesData || []}
+						nations={nationsData || {}}
+						vehicleTypes={vehicleTypesData || {}}
+						mediaPath={mediaPathData || ""}
+					/>
+				</>
+			)}
 		</Layout>
 	)
 }

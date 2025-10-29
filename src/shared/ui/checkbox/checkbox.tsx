@@ -21,6 +21,7 @@ function Checkbox({
 			<input
 				className={styles.control}
 				name={name}
+				value={name}
 				type="checkbox"
 				checked={checked}
 				disabled={disabled}

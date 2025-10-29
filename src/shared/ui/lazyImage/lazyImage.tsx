@@ -6,7 +6,7 @@ type LazyImagePropsT = {
 }
 
 function LazyImage({ src, alt, ...restProps }: LazyImagePropsT) {
-	const [imageSrc, setImageSrc] = useState<string>("")
+	const [imageSrc, setImageSrc] = useState<string | null>(null)
 	const imgRef = useRef<HTMLImageElement>(null)
 
 	useEffect(() => {
