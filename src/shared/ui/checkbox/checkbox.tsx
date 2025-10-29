@@ -1,0 +1,53 @@
+import React from "react"
+import styles from "./checkbox.module.scss"
+
+type CheckboxPropsT = {
+	name: string
+	checked?: boolean
+	onChange?: (checked: boolean) => void
+	label?: string | React.ReactNode
+	disabled?: boolean
+}
+
+function Checkbox({
+	name,
+	checked,
+	label,
+	disabled,
+	onChange,
+}: CheckboxPropsT) {
+	return (
+		<label className={styles.checkbox}>
+			<input
+				className={styles.control}
+				name={name}
+				type="checkbox"
+				checked={checked}
+				disabled={disabled}
+				onChange={e => onChange?.(e.target.checked)}
+			/>
+			<span className={styles.box} aria-hidden="true">
+				<svg
+					className={styles.check}
+					viewBox="0 0 24 24"
+					width="14"
+					height="14"
+					focusable="false"
+					aria-hidden="true"
+				>
+					<polyline
+						points="20 6 9 17 4 12"
+						stroke="currentColor"
+						strokeWidth="3"
+						fill="none"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					/>
+				</svg>
+			</span>
+			{label && <span className={styles.label}>{label}</span>}
+		</label>
+	)
+}
+
+export default Checkbox

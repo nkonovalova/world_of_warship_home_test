@@ -5,6 +5,8 @@ import { useGetMediaPathQuery } from "../../shared/store/mediaPathApiSlice.ts"
 import { useGetVehicleTypesQuery } from "../../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
 import { useGetVehiclesQuery } from "../../entities/vehicles/store/vehiclesApiSlice.ts"
 import VehicleList from "./ui/vehicleList/vehicleList.tsx"
+import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
+import Button from "../../shared/ui/button/button.tsx"
 
 function PageVehicles() {
 	const {
@@ -43,14 +45,18 @@ function PageVehicles() {
 
 	return (
 		<Layout header="Ships" isLoading={isLoading} errorMessage={errorMessage}>
-			{!isLoading && (
-				<VehicleList
-					vehicles={vehiclesData || []}
-					nations={nationsData || {}}
-					vehicleTypes={vehicleTypesData || {}}
-					mediaPath={mediaPathData || ""}
-				/>
-			)}
+			<div>
+				<Checkbox name={"en"} label={"England"} />
+				<Button>Apply</Button>
+			</div>
+			{/*{!isLoading && (*/}
+			{/*	<VehicleList*/}
+			{/*		vehicles={vehiclesData || []}*/}
+			{/*		nations={nationsData || {}}*/}
+			{/*		vehicleTypes={vehicleTypesData || {}}*/}
+			{/*		mediaPath={mediaPathData || ""}*/}
+			{/*	/>*/}
+			{/*)}*/}
 		</Layout>
 	)
 }

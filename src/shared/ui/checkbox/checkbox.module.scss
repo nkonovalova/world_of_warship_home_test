@@ -1,0 +1,64 @@
+@use "../variables.module.scss" as vars;
+.checkbox{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+
+  &.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.control{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:checked + .box {
+    color: vars.$color-additional;
+  }
+
+  &:checked + .box .check {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid vars.$color-font;
+  border-radius: 4px;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.check {
+  opacity: 0;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  transform: scale(0.8);
+  stroke: currentColor;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: vars.$color-font;
+}
+
