@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import styles from "./vehicleList.module.scss"
 
 import VehicleCard from "../../../../features/vehicleCard/vehicleCard.tsx"
-import { LOCALIZATION_DEFAULT_LANG } from "../../../../shared/config/common.ts"
 import { VehicleI } from "../../../../entities/vehicles/model/types.ts"
 import { NationI } from "../../../../entities/nations/model/types.ts"
 import { VehicleTypeI } from "../../../../entities/vehicleTypes/model/types.ts"
+import { LocalizationContext } from "../../../../shared/context/localizationContext.tsx"
 
 type VehicleListPropsT = {
 	vehicles: VehicleI[]
@@ -16,6 +16,7 @@ type VehicleListPropsT = {
 
 const VehicleList = React.memo(
 	({ vehicles, nations, vehicleTypes, mediaPath }: VehicleListPropsT) => {
+		const language = useContext(LocalizationContext)
 		return (
 			<ul className={styles.vehicleList}>
 				{vehicles.map(vehicle => {
@@ -30,14 +31,8 @@ const VehicleList = React.memo(
 								level={vehicle.level}
 								vehicleType={vehicle?.tags[0] || ""}
 								nation={vehicle?.nation || ""}
-								name={
-									vehicle.localization?.mark[LOCALIZATION_DEFAULT_LANG] || ""
-								}
-								description={
-									vehicle.localization?.description[
-										LOCALIZATION_DEFAULT_LANG
-									] || ""
-								}
+								name={vehicle.localization?.mark[language] || ""}
+								description={vehicle.localization?.description[language] || ""}
 								nationIconUrl={vehicleNation?.icons?.tiny || ""}
 								vehicleTypeIconUrl={vehicleType?.icons?.default || ""}
 								vehicleIconUrl={vehicle.icons?.large || ""}
