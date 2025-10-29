@@ -1,15 +1,18 @@
 import {ReactNode, useEffect, useState} from "react";
 import styles from "./layout.module.scss";
+import Loader from "../loader/loader.tsx";
 
 type LayoutT = {
     header?: ReactNode;
     children?: ReactNode;
     leftSidebar?: ReactNode;
     rightSidebar?: ReactNode;
+    isLoading?: boolean;
     errorMessage?: string;
 };
 
-function Layout({header, children, leftSidebar, rightSidebar, errorMessage}: LayoutT) {
+function Layout({header, children, leftSidebar, rightSidebar, errorMessage, isLoading}: LayoutT) {
+    // TODO: improve error handling UX
     const [showError, setShowError] = useState(Boolean(errorMessage));
 
     useEffect(() => {
@@ -24,9 +27,12 @@ function Layout({header, children, leftSidebar, rightSidebar, errorMessage}: Lay
             <div className={styles.sidebarLeft}>
                 {leftSidebar && <aside>{leftSidebar}</aside>}
             </div>
-            <header className={styles.header}>{header}</header>
+            <header className={styles.header}>
+                <div className={styles.headerIcon}></div>
+                <h1 className={styles.headerText}>{header}</h1>
+            </header>
             <main className={styles.content}>
-                {children}
+                { isLoading ? <div className={styles.loader}><Loader /></div> : children }
             </main>
             <div className={styles.sidebarRight}>
                 {rightSidebar && <aside>{rightSidebar}</aside>}

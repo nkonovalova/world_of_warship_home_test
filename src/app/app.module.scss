@@ -1,41 +1,18 @@
-.app {
-	text-align: center;
-}
+@use "../shared/ui/variables.module.scss" as vars;
 
-.app-logo {
-	height: 40vmin;
-	pointer-events: none;
+@import "normalize-scss";
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 12px;
 
-	@media (prefers-reduced-motion: no-preference) {
-		animation: app-logo-float infinite 3s ease-in-out;
-	}
-
-	@media screen and (min-width: 1024px) {
-		height: 60vmin;
+	@media screen and (min-width: vars.$breakpoint-tablet) {
+		font-size: 16px;
 	}
 }
 
-.app-header {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-}
-
-.app-link {
-	color: rgb(112, 76, 182);
-}
-
-@keyframes app-logo-float {
-	0% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(10px);
-	}
-	100% {
-		transform: translateY(0px);
-	}
+h1 {
+	font-size: 1.5rem;
 }

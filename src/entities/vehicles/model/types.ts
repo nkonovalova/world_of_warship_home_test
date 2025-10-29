@@ -9,7 +9,7 @@ export interface VehicleIconsI extends IconsI {
     local_contour_alive?: string;
 }
 
-export interface VehicleI {
+export interface VehicleApiI {
     level: number;
     name: string;
     nation: string;
@@ -18,7 +18,11 @@ export interface VehicleI {
     localization?: LocalizationI;
 }
 
+export interface VehicleI extends VehicleApiI {
+    id: string;
+}
+
 export type VehiclesApiResponseT = {
     status: string,
-    data: Record<string, VehicleI>;
+    data: Record<string, VehicleApiI>;
 }

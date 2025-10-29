@@ -1,4 +1,4 @@
-import {IconsI, LocalizationI} from "../../../shared/types/common.ts";
+import { IconsI, LocalizationI } from "../../../shared/types/common.ts"
 
 export type NationMark = [
 	"ru",
@@ -20,15 +20,15 @@ export type NationMark = [
 	"ja",
 	"es",
 	"zh_tw",
-];
+]
 
 export interface NationI {
-	id?: number;
-	name?: string;
-	color?: number; // RGB as integer
-	tags?: string[];
-	icons?: IconsI;
-	localization?: LocalizationI;
+	id: number
+	name: string
+	color?: number // RGB as integer
+	tags?: string[]
+	icons?: IconsI
+	localization?: LocalizationI
 }
 
 export type NationsApiResponseT = {

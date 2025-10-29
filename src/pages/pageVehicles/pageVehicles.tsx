@@ -1,40 +1,84 @@
-import { useGetNationsQuery } from "../../entities/nations/store/nationsApiSlice.ts";
+import styles from "./pageVehicles.module.scss"
 
-import Layout from "../../shared/ui/layout/layout.tsx";
-import {useGetMediaPathQuery} from "../../shared/store/mediaPathApiSlice.ts";
-import {useGetVehicleTypesQuery} from "../../entities/vehicleTypes/store/vehicleTypesApiSlice.ts";
-import {useGetVehiclesQuery} from "../../entities/vehicles/store/vehiclesApiSlice.ts";
+import { useGetNationsQuery } from "../../entities/nations/store/nationsApiSlice.ts"
+
+import Layout from "../../shared/ui/layout/layout.tsx"
+import { useGetMediaPathQuery } from "../../shared/store/mediaPathApiSlice.ts"
+import { useGetVehicleTypesQuery } from "../../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
+import { useGetVehiclesQuery } from "../../entities/vehicles/store/vehiclesApiSlice.ts"
+import VehicleCard from "../../features/vehicleCard/vehicleCard.tsx"
+import { LOCALIZATION_DEFAULT_LANG } from "../../shared/config/common.ts"
 
 function PageVehicles() {
 	const {
 		data: mediaPathData,
-		isError: isMediaPathError,
+		error: mediaPathError,
 		isLoading: isMediaPathLoading,
-		isSuccess: isMediaPathSuccess,
-	} = useGetMediaPathQuery();
+	} = useGetMediaPathQuery()
 
 	const {
 		data: nationsData,
-		isError: isNationsError,
+		error: nationsError,
 		isLoading: isNationsLoading,
-		isSuccess: isNationsSuccess,
-	} = useGetNationsQuery();
+	} = useGetNationsQuery()
 
 	const {
 		data: vehicleTypesData,
-		isError: isVehicleTypesError,
+		error: vehicleTypesError,
 		isLoading: isVehicleTypesLoading,
-		isSuccess: isVehicleTypesSuccess,
-	} = useGetVehicleTypesQuery();
+	} = useGetVehicleTypesQuery()
 
 	const {
 		data: vehiclesData,
-		isError: isVehiclesError,
+		error: vehiclesError,
 		isLoading: isVehiclesLoading,
-		isSuccess: isVehiclesSuccess,
-	} = useGetVehiclesQuery();
+	} = useGetVehiclesQuery()
 
-	return <Layout header={<span>Hi!</span>} >Hello, Ships!</Layout>
+	const isLoading =
+		isNationsLoading ||
+		isVehicleTypesLoading ||
+		isVehiclesLoading ||
+		isMediaPathLoading
+	const errorMessage =
+		mediaPathError || nationsError || vehicleTypesError || vehiclesError
+			? "Error loading data."
+			: ""
+
+	const testVehicle = vehiclesData ? vehiclesData[0] : null
+	const testVehicleNation = nationsData
+		? nationsData[testVehicle?.nation || ""]
+		: null
+	const testVehicleType = vehicleTypesData
+		? vehicleTypesData[testVehicle?.tags[0] || ""]
+		: null
+	return (
+		<Layout header="Ships" isLoading={isLoading} errorMessage={errorMessage}>
+			{testVehicle && mediaPathData && (
+				<ul className={styles.vehicleList}>
+					<li className={styles.vehicleItem} key={testVehicle.id}>
+						<VehicleCard
+							id={testVehicle.id}
+							level={testVehicle.level}
+							vehicleType={testVehicle?.tags[0] || ""}
+							nation={testVehicle?.nation || ""}
+							name={
+								testVehicle.localization?.mark[LOCALIZATION_DEFAULT_LANG] || ""
+							}
+							description={
+								testVehicle.localization?.description[
+									LOCALIZATION_DEFAULT_LANG
+								] || ""
+							}
+							nationIconUrl={testVehicleNation?.icons?.tiny || ""}
+							vehicleTypeIconUrl={testVehicleType?.icons?.default || ""}
+							vehicleIconUrl={testVehicle.icons?.large || ""}
+							mediaPath={mediaPathData}
+						/>
+					</li>
+				</ul>
+			)}
+		</Layout>
+	)
 }
 
 export default PageVehicles

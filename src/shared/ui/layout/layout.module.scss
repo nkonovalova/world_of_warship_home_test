@@ -2,8 +2,8 @@
 
 .wrapper {
   display: grid;
-  height: 100vh;
-  background-color: #163146;
+  min-height: 100vh;
+  background-color: vars.$color-background;
   padding-top: 1rem;
   grid-template-areas:
     "header"
@@ -12,14 +12,19 @@
   grid-template-columns: 1fr;
   color: vars.$color-font;
 
+
   @media screen and (min-width: vars.$breakpoint-desktop) {
     padding-top: 2rem;
     grid-template-areas:
     "sidebar-left header sidebar-right"
     "sidebar-left content sidebar-right";
     grid-template-rows: auto 1fr;
-    grid-template-columns: 220px 1fr 270px;
+    grid-template-columns: 110px 1fr 110px;
     grid-column-gap: 10px;
+  }
+
+  @media screen and (min-width: vars.$breakpoint-large-desktop) {
+    grid-template-columns: 270px 1fr 270px;
   }
 }
 
@@ -34,15 +39,28 @@
 .header {
   grid-area: header;
   padding: 0 1rem;
+  display: flex;
 
   @media screen and (min-width: vars.$breakpoint-desktop){
     padding: 0;
   }
 }
 
+.header-icon {
+  @media screen and (min-width: vars.$breakpoint-desktop) {
+    width: 10px;
+  }
+}
+
+.header-text {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
 .content {
   grid-area: content;
   padding: 0 1rem;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: vars.$breakpoint-desktop){
     padding: 0;
@@ -97,3 +115,10 @@
   transform: translateY(-1px);
 }
 
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
