@@ -1,4 +1,6 @@
 import styles from "./vehicleCard.module.scss"
+import { arabicToRoman } from "../../shared/utils/arabicToRoman/arabicToRoman.ts"
+import LazyImage from "../../shared/ui/lazyImage/lazyImage.tsx"
 type VehicleCardT = {
 	id: string
 	level: number
@@ -26,7 +28,7 @@ function VehicleCard({
 }: VehicleCardT) {
 	return (
 		<div className={styles.card} key={id}>
-			<img
+			<LazyImage
 				className={styles.image}
 				src={mediaPath + vehicleIconUrl}
 				alt={name}
@@ -44,7 +46,7 @@ function VehicleCard({
 						alt={vehicleType}
 					/>
 					<h2 className={styles.name}>
-						{level} {name}
+						{arabicToRoman(level)} {name}
 					</h2>
 				</div>
 

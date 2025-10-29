@@ -1,0 +1,32 @@
+@use "../../../../shared/ui/variables.module.scss" as vars;
+
+.vehicle-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  row-gap: 10px;
+
+  @media screen and (min-width: vars.$breakpoint-tablet) {
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 4%;
+  }
+
+  @media screen and (min-width: vars.$breakpoint-large-desktop) {
+    column-gap: 5%;
+  }
+}
+
+.vehicle-item {
+  list-style: none;
+  display: block;
+  width: 100%;
+
+  @media screen and (min-width: vars.$breakpoint-tablet) {
+    width: 48%;
+  }
+
+  @media screen and (min-width: vars.$breakpoint-large-desktop){
+    width: 30%;
+  }
+}
