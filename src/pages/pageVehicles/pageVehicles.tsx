@@ -28,11 +28,8 @@ function PageVehicles() {
 		isLoading: isVehicleTypesLoading,
 	} = useGetVehicleTypesQuery()
 
-	const {
-		// data: vehiclesData,
-		error: vehiclesError,
-		isLoading: isVehiclesLoading,
-	} = useGetVehiclesQuery()
+	const { error: vehiclesError, isLoading: isVehiclesLoading } =
+		useGetVehiclesQuery()
 
 	const isLoading =
 		isNationsLoading ||
