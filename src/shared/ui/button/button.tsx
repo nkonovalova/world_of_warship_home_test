@@ -1,14 +1,28 @@
 import React from "react"
-import style from "./button.module.scss"
+import styles from "./button.module.scss"
 import clsx from "clsx"
 
-type ButtonPropsT = React.ButtonHTMLAttributes<HTMLButtonElement>
+export enum ButtonStyleE {
+	ICON = "ICON",
+	DEFAULT = "DEFAULT",
+	TINY = "TINY",
+}
 
-function Button(props: ButtonPropsT) {
+type ButtonVariant = ButtonStyleE
+interface ButtonPropsT extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	buttonStyle?: ButtonVariant
+}
+
+function Button({
+	buttonStyle = ButtonStyleE.DEFAULT,
+	...props
+}: ButtonPropsT) {
 	return (
 		<button
-			className={clsx(style.button, {
-				[style.disabled]: props.disabled,
+			className={clsx(styles.button, {
+				[styles.disabled]: props.disabled,
+				[styles.icon]: buttonStyle === ButtonStyleE.ICON,
+				[styles.tiny]: buttonStyle === ButtonStyleE.TINY,
 			})}
 			onClick={props.onClick}
 			{...props}

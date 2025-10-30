@@ -1,0 +1,35 @@
+@use '../../shared/ui/variables.module.scss' as vars;
+
+.filter {
+  position: relative;
+  margin-bottom: 20px;
+}
+.filter-header {
+  display: flex;
+  justify-content: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid vars.$color-border-light;
+  border-bottom: 1px solid vars.$color-border-light;
+}
+.filter-container {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.icon-filter {
+  width: 16px;
+  display: inline-block;
+}
+
+.button-reset-block {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid vars.$color-border-light;
+}

@@ -1,14 +1,14 @@
 @use '../../shared/ui/variables.module.scss' as vars;
 
 .filter-container {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8);
 }
 .filter {
   padding: 10px 20px;
   display: flex;
   flex-direction: row;
   column-gap: 40px;
-  border-bottom: 1px solid rgba(224, 233, 242, 0.5);
+  border-bottom: 1px solid vars.$color-border-light;
 }
 
 .button-container {

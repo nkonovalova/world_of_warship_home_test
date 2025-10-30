@@ -20,5 +20,15 @@
     opacity: 0.55;
     cursor: not-allowed;
   }
+
+  &.icon {
+    border: none;
+    padding: 5px;
+    background: none;
+  }
+
+  &.tiny {
+    padding: 5px;
+  }
 }
 
