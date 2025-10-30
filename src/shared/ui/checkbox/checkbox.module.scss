@@ -10,6 +10,23 @@
   &.disabled {
     opacity: 0.55;
     cursor: not-allowed;
+
+    .label {
+      color: rgba(vars.$color-font, 0.55);
+    }
+
+    .box {
+      border-color: rgba(vars.$color-font, 0.55);
+      background: none;
+      color: transparent;
+    }
+
+    .check {
+      /* default hidden or muted when disabled */
+      stroke: rgba(vars.$color-font, 0.55);
+      opacity: 0;
+      transform: scale(0.95);
+    }
   }
 }
 
@@ -34,6 +51,7 @@
     opacity: 1;
     transform: scale(1);
   }
+
 }
 
 .box {

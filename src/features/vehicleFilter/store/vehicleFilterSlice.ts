@@ -1,4 +1,4 @@
-import { createAppSlice } from "../../app/createAppSlice.ts"
+import { createAppSlice } from "../../../app/createAppSlice.ts"
 
 export type VehicleFilterSliceT = {
 	nations: string[]

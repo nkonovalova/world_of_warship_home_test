@@ -11,13 +11,16 @@ import {
 	setLevel,
 	setNation,
 	setType,
-} from "./vehicleFilterSlice.ts"
+} from "./store/vehicleFilterSlice.ts"
 import { ChangeEvent } from "react"
 
 type VehicleFilterPropsT = {
 	nations: Record<string, NationI>
 	vehicleTypes: Record<string, VehicleTypeI>
 	mediaPath: string
+	availableLevels?: Set<number>
+	availableNations?: Set<string>
+	availableTypes?: Set<string>
 }
 
 const levels = [2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -64,6 +67,9 @@ function VehicleFilter({
 	nations,
 	vehicleTypes,
 	mediaPath,
+	availableNations,
+	availableLevels,
+	availableTypes,
 }: VehicleFilterPropsT) {
 	const dispatch = useAppDispatch()
 
@@ -112,6 +118,7 @@ function VehicleFilter({
 								value={level}
 								label={arabicToRoman(level)}
 								onChange={onLevelChange}
+								disabled={availableLevels ? !availableLevels.has(level) : false}
 							/>
 						</li>
 					))}
@@ -134,6 +141,11 @@ function VehicleFilter({
 									}
 									value={vehicleTypeName}
 									onChange={onTypeChange}
+									disabled={
+										availableTypes
+											? !availableTypes.has(vehicleTypeName)
+											: false
+									}
 								/>
 							</li>
 						),
@@ -150,6 +162,9 @@ function VehicleFilter({
 								label={<IconNation nation={nation} mediaPath={mediaPath} />}
 								value={nation.name}
 								onChange={onNationChange}
+								disabled={
+									availableNations ? !availableNations.has(nation.name) : false
+								}
 							/>
 						</li>
 					))}

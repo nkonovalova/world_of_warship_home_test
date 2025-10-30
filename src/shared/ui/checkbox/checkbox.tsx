@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react"
 import styles from "./checkbox.module.scss"
+import clsx from "clsx"
 
 type CheckboxPropsT = {
 	name: string
@@ -19,7 +20,11 @@ function Checkbox({
 	value,
 }: CheckboxPropsT) {
 	return (
-		<label className={styles.checkbox}>
+		<label
+			className={clsx(styles.checkbox, {
+				[styles.disabled]: disabled,
+			})}
+		>
 			<input
 				className={styles.control}
 				name={name}

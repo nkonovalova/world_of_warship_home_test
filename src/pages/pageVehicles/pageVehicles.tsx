@@ -5,9 +5,9 @@ import { useGetMediaPathQuery } from "../../shared/store/mediaPathApiSlice.ts"
 import { useGetVehicleTypesQuery } from "../../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
 import { useGetVehiclesQuery } from "../../entities/vehicles/store/vehiclesApiSlice.ts"
 import VehicleList from "./ui/vehicleList/vehicleList.tsx"
-import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
-import Button from "../../shared/ui/button/button.tsx"
 import VehicleFilter from "../../features/vehicleFilter/vehicleFilter.tsx"
+import { selectFilteredVehicles } from "./selectFilteredVehicles.ts"
+import { useSelector } from "react-redux"
 
 function PageVehicles() {
 	const {
@@ -29,7 +29,7 @@ function PageVehicles() {
 	} = useGetVehicleTypesQuery()
 
 	const {
-		data: vehiclesData,
+		// data: vehiclesData,
 		error: vehiclesError,
 		isLoading: isVehiclesLoading,
 	} = useGetVehiclesQuery()
@@ -44,6 +44,13 @@ function PageVehicles() {
 			? "Error loading data."
 			: ""
 
+	const {
+		filteredVehicles,
+		availableNations,
+		availableLevels,
+		availableTypes,
+	} = useSelector(selectFilteredVehicles)
+
 	return (
 		<Layout header="Ships" isLoading={isLoading} errorMessage={errorMessage}>
 			{!isLoading && (
@@ -53,10 +60,13 @@ function PageVehicles() {
 							nations={nationsData || {}}
 							vehicleTypes={vehicleTypesData || {}}
 							mediaPath={mediaPathData || ""}
+							availableNations={availableNations}
+							availableLevels={availableLevels}
+							availableTypes={availableTypes}
 						/>
 					</div>
 					<VehicleList
-						vehicles={vehiclesData || []}
+						vehicles={filteredVehicles || []}
 						nations={nationsData || {}}
 						vehicleTypes={vehicleTypesData || {}}
 						mediaPath={mediaPathData || ""}
