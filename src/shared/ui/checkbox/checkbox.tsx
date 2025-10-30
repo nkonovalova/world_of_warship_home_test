@@ -1,10 +1,11 @@
-import React from "react"
+import React, { ChangeEvent } from "react"
 import styles from "./checkbox.module.scss"
 
 type CheckboxPropsT = {
 	name: string
+	value?: string | number
 	checked?: boolean
-	onChange?: (checked: boolean) => void
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 	label?: string | React.ReactNode
 	disabled?: boolean
 }
@@ -15,17 +16,18 @@ function Checkbox({
 	label,
 	disabled,
 	onChange,
+	value,
 }: CheckboxPropsT) {
 	return (
 		<label className={styles.checkbox}>
 			<input
 				className={styles.control}
 				name={name}
-				value={name}
+				value={value}
 				type="checkbox"
 				checked={checked}
 				disabled={disabled}
-				onChange={e => onChange?.(e.target.checked)}
+				onChange={e => onChange?.(e)}
 			/>
 			<span className={styles.box} aria-hidden="true">
 				<svg

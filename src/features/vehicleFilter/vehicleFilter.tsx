@@ -3,6 +3,16 @@ import { NationI } from "../../entities/nations/model/types.ts"
 import { VehicleTypeI } from "../../entities/vehicleTypes/model/types.ts"
 import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
 import { arabicToRoman } from "../../shared/utils/arabicToRoman/arabicToRoman.ts"
+import { useAppDispatch } from "../../app/hooks.ts"
+import {
+	removeLevel,
+	removeNation,
+	removeType,
+	setLevel,
+	setNation,
+	setType,
+} from "./vehicleFilterSlice.ts"
+import { ChangeEvent } from "react"
 
 type VehicleFilterPropsT = {
 	nations: Record<string, NationI>
@@ -55,6 +65,41 @@ function VehicleFilter({
 	vehicleTypes,
 	mediaPath,
 }: VehicleFilterPropsT) {
+	const dispatch = useAppDispatch()
+
+	const onNationChange = (event: ChangeEvent<HTMLInputElement>) => {
+		switch (event.target.checked) {
+			case true:
+				dispatch(setNation(event.target.value))
+				break
+			case false:
+				dispatch(removeNation(event.target.value))
+				break
+		}
+	}
+
+	const onLevelChange = (event: ChangeEvent<HTMLInputElement>) => {
+		switch (event.target.checked) {
+			case true:
+				dispatch(setLevel(Number(event.target.value)))
+				break
+			case false:
+				dispatch(removeLevel(Number(event.target.value)))
+				break
+		}
+	}
+
+	const onTypeChange = (event: ChangeEvent<HTMLInputElement>) => {
+		switch (event.target.checked) {
+			case true:
+				dispatch(setType(event.target.value))
+				break
+			case false:
+				dispatch(removeType(event.target.value))
+				break
+		}
+	}
+
 	return (
 		<section className={styles.filter}>
 			<div className={styles.filterGroup}>
@@ -62,7 +107,12 @@ function VehicleFilter({
 				<ul className={styles.filterGroupItems}>
 					{levels.map(level => (
 						<li key={`level-${level}`} className={styles.filterGroupItem}>
-							<Checkbox name={`level-${level}`} label={arabicToRoman(level)} />
+							<Checkbox
+								name={`level-${level}`}
+								value={level}
+								label={arabicToRoman(level)}
+								onChange={onLevelChange}
+							/>
 						</li>
 					))}
 				</ul>
@@ -82,6 +132,8 @@ function VehicleFilter({
 											mediaPath={mediaPath}
 										/>
 									}
+									value={vehicleTypeName}
+									onChange={onTypeChange}
 								/>
 							</li>
 						),
@@ -96,6 +148,8 @@ function VehicleFilter({
 							<Checkbox
 								name={nation.name}
 								label={<IconNation nation={nation} mediaPath={mediaPath} />}
+								value={nation.name}
+								onChange={onNationChange}
 							/>
 						</li>
 					))}

@@ -2,9 +2,10 @@ import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import { nationsApiSlice } from "../entities/nations/store/nationsApiSlice.ts"
-import {mediaPathApiSlice} from "../shared/store/mediaPathApiSlice.ts";
-import {vehicleTypesApiSlice} from "../entities/vehicleTypes/store/vehicleTypesApiSlice.ts";
-import {vehiclesApiSlice} from "../entities/vehicles/store/vehiclesApiSlice.ts";
+import { mediaPathApiSlice } from "../shared/store/mediaPathApiSlice.ts"
+import { vehicleTypesApiSlice } from "../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
+import { vehiclesApiSlice } from "../entities/vehicles/store/vehiclesApiSlice.ts"
+import { vehicleFilterSlice } from "../features/vehicleFilter/vehicleFilterSlice.ts"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -12,7 +13,9 @@ const rootReducer = combineSlices(
 	mediaPathApiSlice,
 	nationsApiSlice,
 	vehicleTypesApiSlice,
-	vehiclesApiSlice);
+	vehiclesApiSlice,
+	vehicleFilterSlice,
+)
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
 
@@ -28,7 +31,8 @@ export const makeStore = (preloadedState?: Partial<RootState>) => {
 				mediaPathApiSlice.middleware,
 				nationsApiSlice.middleware,
 				vehicleTypesApiSlice.middleware,
-				vehiclesApiSlice.middleware)
+				vehiclesApiSlice.middleware,
+			)
 		},
 		preloadedState,
 	})
