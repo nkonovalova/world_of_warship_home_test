@@ -15,4 +15,10 @@
   &:hover {
     opacity: 0.5;
   }
+
+  &.disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
 }
+

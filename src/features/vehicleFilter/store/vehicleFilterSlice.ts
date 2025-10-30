@@ -34,6 +34,11 @@ export const vehicleFilterSlice = createAppSlice({
 		removeLevel: create.reducer((state, action: { payload: number }) => {
 			state.levels = state.levels.filter(level => level !== action.payload)
 		}),
+		resetFilter: create.reducer(state => {
+			state.nations = []
+			state.levels = []
+			state.types = []
+		}),
 	}),
 	selectors: {
 		selectNations: vehicleFilter => vehicleFilter.nations,
@@ -49,6 +54,7 @@ export const {
 	removeType,
 	setLevel,
 	removeLevel,
+	resetFilter,
 } = vehicleFilterSlice.actions
 export const { selectNations, selectTypes, selectLevels } =
 	vehicleFilterSlice.selectors

@@ -3,16 +3,21 @@ import { NationI } from "../../entities/nations/model/types.ts"
 import { VehicleTypeI } from "../../entities/vehicleTypes/model/types.ts"
 import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
 import { arabicToRoman } from "../../shared/utils/arabicToRoman/arabicToRoman.ts"
-import { useAppDispatch } from "../../app/hooks.ts"
+import { useAppDispatch, useAppSelector } from "../../app/hooks.ts"
 import {
 	removeLevel,
 	removeNation,
 	removeType,
+	resetFilter,
+	selectLevels,
+	selectNations,
+	selectTypes,
 	setLevel,
 	setNation,
 	setType,
 } from "./store/vehicleFilterSlice.ts"
 import { ChangeEvent } from "react"
+import Button from "../../shared/ui/button/button.tsx"
 
 type VehicleFilterPropsT = {
 	nations: Record<string, NationI>
@@ -23,7 +28,7 @@ type VehicleFilterPropsT = {
 	availableTypes?: Set<string>
 }
 
-const levels = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 function IconNation({
 	nation,
@@ -72,6 +77,9 @@ function VehicleFilter({
 	availableTypes,
 }: VehicleFilterPropsT) {
 	const dispatch = useAppDispatch()
+	const filterNations = useAppSelector(selectNations)
+	const filterTypes = useAppSelector(selectTypes)
+	const filterLevels = useAppSelector(selectLevels)
 
 	const onNationChange = (event: ChangeEvent<HTMLInputElement>) => {
 		switch (event.target.checked) {
@@ -106,71 +114,96 @@ function VehicleFilter({
 		}
 	}
 
+	const onReset = () => {
+		dispatch(resetFilter())
+	}
+
 	return (
-		<section className={styles.filter}>
-			<div className={styles.filterGroup}>
-				<h3 className={styles.filterGroupTitle}>Tier</h3>
-				<ul className={styles.filterGroupItems}>
-					{levels.map(level => (
-						<li key={`level-${level}`} className={styles.filterGroupItem}>
-							<Checkbox
-								name={`level-${level}`}
-								value={level}
-								label={arabicToRoman(level)}
-								onChange={onLevelChange}
-								disabled={availableLevels ? !availableLevels.has(level) : false}
-							/>
-						</li>
-					))}
-				</ul>
-			</div>
-			<div className={styles.filterGroup}>
-				<h3 className={styles.filterGroupTitle}>Type</h3>
-				<ul className={styles.filterGroupItems}>
-					{Object.entries(vehicleTypes).map(
-						([vehicleTypeName, vehicleType]) => (
-							<li key={vehicleTypeName} className={styles.filterGroupItem}>
+		<div className={styles.filterContainer}>
+			<section className={styles.filter}>
+				<div className={styles.filterGroup}>
+					<h3 className={styles.filterGroupTitle}>Tier</h3>
+					<ul className={styles.filterGroupItems}>
+						{levels.map(level => (
+							<li key={`level-${level}`} className={styles.filterGroupItem}>
 								<Checkbox
-									name={vehicleTypeName}
-									label={
-										<IconVehicleType
-											vehicleType={vehicleType}
-											vehicleTypeName={vehicleTypeName}
-											mediaPath={mediaPath}
-										/>
-									}
-									value={vehicleTypeName}
-									onChange={onTypeChange}
+									name={`level-${level}`}
+									value={level}
+									label={arabicToRoman(level)}
+									onChange={onLevelChange}
 									disabled={
-										availableTypes
-											? !availableTypes.has(vehicleTypeName)
-											: false
+										availableLevels ? !availableLevels.has(level) : false
 									}
+									checked={filterLevels.includes(level)}
 								/>
 							</li>
-						),
-					)}
-				</ul>
+						))}
+					</ul>
+				</div>
+				<div className={styles.filterGroup}>
+					<h3 className={styles.filterGroupTitle}>Type</h3>
+					<ul className={styles.filterGroupItems}>
+						{Object.entries(vehicleTypes).map(
+							([vehicleTypeName, vehicleType]) => (
+								<li key={vehicleTypeName} className={styles.filterGroupItem}>
+									<Checkbox
+										name={vehicleTypeName}
+										label={
+											<IconVehicleType
+												vehicleType={vehicleType}
+												vehicleTypeName={vehicleTypeName}
+												mediaPath={mediaPath}
+											/>
+										}
+										value={vehicleTypeName}
+										onChange={onTypeChange}
+										disabled={
+											availableTypes
+												? !availableTypes.has(vehicleTypeName)
+												: false
+										}
+										checked={filterTypes.includes(vehicleTypeName)}
+									/>
+								</li>
+							),
+						)}
+					</ul>
+				</div>
+				<div className={styles.filterGroup}>
+					<h3 className={styles.filterGroupTitle}>Nation</h3>
+					<ul className={styles.filterGroupItems}>
+						{Object.values(nations).map(nation => (
+							<li key={nation.id} className={styles.filterGroupItem}>
+								<Checkbox
+									name={nation.name}
+									label={<IconNation nation={nation} mediaPath={mediaPath} />}
+									value={nation.name}
+									onChange={onNationChange}
+									disabled={
+										availableNations
+											? !availableNations.has(nation.name)
+											: false
+									}
+									checked={filterNations.includes(nation.name)}
+								/>
+							</li>
+						))}
+					</ul>
+				</div>
+			</section>
+			<div className={styles.buttonContainer}>
+				<Button
+					disabled={
+						filterLevels.length === 0 &&
+						filterNations.length === 0 &&
+						filterTypes.length === 0
+					}
+					onClick={onReset}
+				>
+					Reset ×
+				</Button>
 			</div>
-			<div className={styles.filterGroup}>
-				<h3 className={styles.filterGroupTitle}>Nation</h3>
-				<ul className={styles.filterGroupItems}>
-					{Object.values(nations).map(nation => (
-						<li key={nation.id} className={styles.filterGroupItem}>
-							<Checkbox
-								name={nation.name}
-								label={<IconNation nation={nation} mediaPath={mediaPath} />}
-								value={nation.name}
-								onChange={onNationChange}
-								disabled={
-									availableNations ? !availableNations.has(nation.name) : false
-								}
-							/>
-						</li>
-					))}
-				</ul>
-			</div>
-		</section>
+		</div>
 	)
 }
 
