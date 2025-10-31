@@ -18,6 +18,7 @@ import {
 } from "./store/vehicleFilterSlice.ts"
 import { ChangeEvent } from "react"
 import Button from "../../shared/ui/button/button.tsx"
+import { resetSearch } from "../vehicleSearch/store/vehicleSearchSlice.ts"
 
 type VehicleFilterPropsT = {
 	nations: Record<string, NationI>
@@ -82,6 +83,7 @@ function VehicleFilter({
 	const filterLevels = useAppSelector(selectLevels)
 
 	const onNationChange = (event: ChangeEvent<HTMLInputElement>) => {
+		dispatch(resetSearch())
 		switch (event.target.checked) {
 			case true:
 				dispatch(setNation(event.target.value))
@@ -93,6 +95,7 @@ function VehicleFilter({
 	}
 
 	const onLevelChange = (event: ChangeEvent<HTMLInputElement>) => {
+		dispatch(resetSearch())
 		switch (event.target.checked) {
 			case true:
 				dispatch(setLevel(Number(event.target.value)))
@@ -104,6 +107,7 @@ function VehicleFilter({
 	}
 
 	const onTypeChange = (event: ChangeEvent<HTMLInputElement>) => {
+		dispatch(resetSearch())
 		switch (event.target.checked) {
 			case true:
 				dispatch(setType(event.target.value))

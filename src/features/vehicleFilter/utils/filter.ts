@@ -1,15 +1,11 @@
 import { VehicleI } from "../../../entities/vehicles/model/types.ts"
 import { VehicleFilterSliceT } from "../store/vehicleFilterSlice.ts"
+import { SelectFilteredVehiclesT } from "../../../pages/pageVehicles/selectFilteredVehicles.ts"
 
 export const vehiclesFilterFunction = (
 	vehicles: VehicleI[],
 	filters: VehicleFilterSliceT,
-): {
-	filteredVehicles: VehicleI[]
-	availableTypes: Set<string>
-	availableLevels: Set<number>
-	availableNations: Set<string>
-} => {
+): SelectFilteredVehiclesT => {
 	const typesSet = new Set(filters.types)
 	const availableTypes = new Set<string>()
 	const levelsSet = new Set(filters.levels)

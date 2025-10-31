@@ -20,6 +20,7 @@ import {
 	selectNations,
 	selectTypes,
 } from "../../features/vehicleFilter/store/vehicleFilterSlice.ts"
+import VehicleSearch from "../../features/vehicleSearch/vehicleSearch.tsx"
 
 function PageVehicles() {
 	const [isFilterShow, setIsFilterShow] = useState(false)
@@ -98,6 +99,9 @@ function PageVehicles() {
 										Reset ×
 									</Button>
 								)}
+							</div>
+							<div className={styles.search}>
+								<VehicleSearch />
 							</div>
 						</div>
 						<div

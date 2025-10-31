@@ -6,6 +6,7 @@ import { mediaPathApiSlice } from "../shared/store/mediaPathApiSlice.ts"
 import { vehicleTypesApiSlice } from "../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
 import { vehiclesApiSlice } from "../entities/vehicles/store/vehiclesApiSlice.ts"
 import { vehicleFilterSlice } from "../features/vehicleFilter/store/vehicleFilterSlice.ts"
+import { vehicleSearchSlice } from "../features/vehicleSearch/store/vehicleSearchSlice.ts"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
@@ -15,6 +16,7 @@ const rootReducer = combineSlices(
 	vehicleTypesApiSlice,
 	vehiclesApiSlice,
 	vehicleFilterSlice,
+	vehicleSearchSlice,
 )
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>
