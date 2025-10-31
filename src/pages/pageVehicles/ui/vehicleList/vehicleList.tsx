@@ -1,22 +1,27 @@
-import React, { useContext } from "react"
+import React from "react"
 import styles from "./vehicleList.module.scss"
 
 import VehicleCard from "../../../../features/vehicleCard/vehicleCard.tsx"
 import { VehicleI } from "../../../../entities/vehicles/model/types.ts"
 import { NationI } from "../../../../entities/nations/model/types.ts"
 import { VehicleTypeI } from "../../../../entities/vehicleTypes/model/types.ts"
-import { LocalizationContext } from "../../../../shared/context/localizationContext.tsx"
 
 type VehicleListPropsT = {
 	vehicles: VehicleI[]
 	nations: Record<string, NationI>
 	vehicleTypes: Record<string, VehicleTypeI>
 	mediaPath: string
+	language: string
 }
 
 const VehicleList = React.memo(
-	({ vehicles, nations, vehicleTypes, mediaPath }: VehicleListPropsT) => {
-		const language = useContext(LocalizationContext)
+	({
+		vehicles,
+		nations,
+		vehicleTypes,
+		mediaPath,
+		language,
+	}: VehicleListPropsT) => {
 		return (
 			<ul className={styles.vehicleList}>
 				{vehicles.map(vehicle => {

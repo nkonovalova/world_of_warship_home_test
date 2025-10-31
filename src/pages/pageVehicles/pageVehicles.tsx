@@ -21,6 +21,7 @@ import {
 	selectTypes,
 } from "./ui/vehicleFilter/store/vehicleFilterSlice.ts"
 import VehicleSearch from "./ui/vehicleSearch/vehicleSearch.tsx"
+import { selectLocalization } from "../../shared/store/localization.ts"
 
 function PageVehicles() {
 	const [isFilterShow, setIsFilterShow] = useState(false)
@@ -74,6 +75,7 @@ function PageVehicles() {
 	const filterNations = useAppSelector(selectNations)
 	const filterTypes = useAppSelector(selectTypes)
 	const filterLevels = useAppSelector(selectLevels)
+	const language = useAppSelector(selectLocalization)
 
 	return (
 		<Layout header="Ships" isLoading={isLoading} errorMessage={errorMessage}>
@@ -124,6 +126,7 @@ function PageVehicles() {
 						nations={nationsData || {}}
 						vehicleTypes={vehicleTypesData || {}}
 						mediaPath={mediaPathData || ""}
+						language={language}
 					/>
 				</>
 			)}

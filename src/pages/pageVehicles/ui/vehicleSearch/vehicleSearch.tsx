@@ -1,7 +1,11 @@
 import SearchInput from "../../../../shared/ui/searchInput/searchInput.tsx"
 import React from "react"
-import { useAppDispatch } from "../../../../app/hooks.ts"
-import { resetSearch, setSearchQuery } from "./store/vehicleSearchSlice.ts"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks.ts"
+import {
+	resetSearch,
+	selectSearchQuery,
+	setSearchQuery,
+} from "./store/vehicleSearchSlice.ts"
 import { resetFilter } from "../vehicleFilter/store/vehicleFilterSlice.ts"
 
 function VehicleSearch() {
@@ -11,8 +15,15 @@ function VehicleSearch() {
 		dispatch(setSearchQuery(e.target.value))
 	}
 	const onReset = () => dispatch(resetSearch())
+
+	const searchValue = useAppSelector(selectSearchQuery)
 	return (
-		<SearchInput name="vehicleSearch" onChange={onSearch} onReset={onReset} />
+		<SearchInput
+			value={searchValue}
+			name="vehicleSearch"
+			onChange={onSearch}
+			onReset={onReset}
+		/>
 	)
 }
 

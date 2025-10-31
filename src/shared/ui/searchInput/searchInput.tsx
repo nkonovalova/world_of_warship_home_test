@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useMemo, useState } from "react"
+import React, { ChangeEvent, useEffect, useMemo, useState } from "react"
 import styles from "./searchInput.module.scss"
 import clsx from "clsx"
 import { IconSearch } from "../icons/icons.tsx"
@@ -22,6 +22,10 @@ function SearchInput({
 	...restProps
 }: SearchInputPropsT) {
 	const [searchValue, setSearchValue] = useState("")
+
+	useEffect(() => {
+		setSearchValue(String(value))
+	}, [value])
 
 	const debouncedSearch = useMemo(
 		() =>
