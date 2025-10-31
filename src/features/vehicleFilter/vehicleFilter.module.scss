@@ -6,9 +6,13 @@
 .filter {
   padding: 10px 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   column-gap: 40px;
   border-bottom: 1px solid vars.$color-border-light;
+
+  @media screen and (min-width: vars.$breakpoint-mobile){
+    flex-direction: row;
+  }
 }
 
 .button-container {

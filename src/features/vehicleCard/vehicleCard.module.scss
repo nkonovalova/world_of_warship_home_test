@@ -47,14 +47,17 @@
   gap: 5px;
   align-items: flex-start;
   vertical-align: center;
+  margin-bottom: 5px;
+
 }
 
 .name {
   color: vars.$color-ship-header;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   margin: 0;
   overflow: hidden;
+  word-break: break-word;
 }
 
 .nation {
@@ -68,9 +71,10 @@
 .description {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  font-size: 1rem;
+  font-size: 0.8rem;
   height: 100%;
   overflow: hidden;
+
 }
 
 .image {

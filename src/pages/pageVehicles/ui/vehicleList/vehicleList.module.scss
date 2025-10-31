@@ -5,11 +5,13 @@
   padding: 0;
   margin: 0;
   row-gap: 10px;
+  flex-direction: column;
 
   @media screen and (min-width: vars.$breakpoint-tablet) {
     flex-wrap: wrap;
     row-gap: 30px;
     column-gap: 4%;
+    flex-direction: row;
   }
 
   @media screen and (min-width: vars.$breakpoint-large-desktop) {
