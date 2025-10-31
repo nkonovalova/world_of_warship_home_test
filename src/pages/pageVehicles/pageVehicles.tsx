@@ -6,7 +6,7 @@ import { useGetMediaPathQuery } from "../../shared/store/mediaPathApiSlice.ts"
 import { useGetVehicleTypesQuery } from "../../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
 import { useGetVehiclesQuery } from "../../entities/vehicles/store/vehiclesApiSlice.ts"
 import VehicleList from "./ui/vehicleList/vehicleList.tsx"
-import VehicleFilter from "../../features/vehicleFilter/vehicleFilter.tsx"
+import VehicleFilter from "./ui/vehicleFilter/vehicleFilter.tsx"
 import { selectFilteredVehicles } from "./selectFilteredVehicles.ts"
 import { useSelector } from "react-redux"
 import Button, { ButtonStyleE } from "../../shared/ui/button/button.tsx"
@@ -19,8 +19,8 @@ import {
 	selectLevels,
 	selectNations,
 	selectTypes,
-} from "../../features/vehicleFilter/store/vehicleFilterSlice.ts"
-import VehicleSearch from "../../features/vehicleSearch/vehicleSearch.tsx"
+} from "./ui/vehicleFilter/store/vehicleFilterSlice.ts"
+import VehicleSearch from "./ui/vehicleSearch/vehicleSearch.tsx"
 
 function PageVehicles() {
 	const [isFilterShow, setIsFilterShow] = useState(false)

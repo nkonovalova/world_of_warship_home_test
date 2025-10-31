@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store.ts"
 import { vehiclesApiSlice } from "../../entities/vehicles/store/vehiclesApiSlice.ts"
-import { vehiclesFilterFunction } from "../../features/vehicleFilter/utils/filter.ts"
-import { vehiclesSearchByNameFunction } from "../../features/vehicleSearch/utils/vehicleSearch.ts"
+import { vehiclesFilterFunction } from "./ui/vehicleFilter/utils/filter.ts"
+import { vehiclesSearchByNameFunction } from "./ui/vehicleSearch/utils/vehicleSearch.ts"
 import { VehicleI } from "../../entities/vehicles/model/types.ts"
 
 export type SelectFilteredVehiclesT = {

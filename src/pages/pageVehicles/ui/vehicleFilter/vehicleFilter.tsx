@@ -1,9 +1,9 @@
 import styles from "./vehicleFilter.module.scss"
-import { NationI } from "../../entities/nations/model/types.ts"
-import { VehicleTypeI } from "../../entities/vehicleTypes/model/types.ts"
-import Checkbox from "../../shared/ui/checkbox/checkbox.tsx"
-import { arabicToRoman } from "../../shared/utils/arabicToRoman/arabicToRoman.ts"
-import { useAppDispatch, useAppSelector } from "../../app/hooks.ts"
+import { NationI } from "../../../../entities/nations/model/types.ts"
+import { VehicleTypeI } from "../../../../entities/vehicleTypes/model/types.ts"
+import Checkbox from "../../../../shared/ui/checkbox/checkbox.tsx"
+import { arabicToRoman } from "../../../../shared/utils/arabicToRoman/arabicToRoman.ts"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks.ts"
 import {
 	removeLevel,
 	removeNation,
@@ -17,7 +17,7 @@ import {
 	setType,
 } from "./store/vehicleFilterSlice.ts"
 import { ChangeEvent } from "react"
-import Button from "../../shared/ui/button/button.tsx"
+import Button from "../../../../shared/ui/button/button.tsx"
 import { resetSearch } from "../vehicleSearch/store/vehicleSearchSlice.ts"
 
 type VehicleFilterPropsT = {

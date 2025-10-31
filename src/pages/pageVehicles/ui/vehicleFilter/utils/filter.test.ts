@@ -1,5 +1,5 @@
-import { vehiclesFilterFunction } from "./filter"
-import { VehicleI } from "../../../entities/vehicles/model/types.ts"
+import { vehiclesFilterFunction } from "./filter.ts"
+import { VehicleI } from "../../../../../entities/vehicles/model/types.ts"
 import { VehicleFilterSliceT } from "../store/vehicleFilterSlice.ts"
 
 type Vehicle = {

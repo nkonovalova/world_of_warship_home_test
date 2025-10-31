@@ -5,8 +5,8 @@ import { nationsApiSlice } from "../entities/nations/store/nationsApiSlice.ts"
 import { mediaPathApiSlice } from "../shared/store/mediaPathApiSlice.ts"
 import { vehicleTypesApiSlice } from "../entities/vehicleTypes/store/vehicleTypesApiSlice.ts"
 import { vehiclesApiSlice } from "../entities/vehicles/store/vehiclesApiSlice.ts"
-import { vehicleFilterSlice } from "../features/vehicleFilter/store/vehicleFilterSlice.ts"
-import { vehicleSearchSlice } from "../features/vehicleSearch/store/vehicleSearchSlice.ts"
+import { vehicleFilterSlice } from "../pages/pageVehicles/ui/vehicleFilter/store/vehicleFilterSlice.ts"
+import { vehicleSearchSlice } from "../pages/pageVehicles/ui/vehicleSearch/store/vehicleSearchSlice.ts"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.

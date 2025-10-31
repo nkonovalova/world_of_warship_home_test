@@ -1,6 +1,6 @@
-import SearchInput from "../../shared/ui/searchInput/searchInput.tsx"
+import SearchInput from "../../../../shared/ui/searchInput/searchInput.tsx"
 import React from "react"
-import { useAppDispatch } from "../../app/hooks.ts"
+import { useAppDispatch } from "../../../../app/hooks.ts"
 import { resetSearch, setSearchQuery } from "./store/vehicleSearchSlice.ts"
 import { resetFilter } from "../vehicleFilter/store/vehicleFilterSlice.ts"
 

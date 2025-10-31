@@ -1,5 +1,5 @@
-import { VehicleI } from "../../../entities/vehicles/model/types.ts"
-import { SelectFilteredVehiclesT } from "../../../pages/pageVehicles/selectFilteredVehicles.ts"
+import { VehicleI } from "../../../../../entities/vehicles/model/types.ts"
+import { SelectFilteredVehiclesT } from "../../../selectFilteredVehicles.ts"
 
 export const vehiclesSearchByNameFunction = (
 	vehicles: VehicleI[],

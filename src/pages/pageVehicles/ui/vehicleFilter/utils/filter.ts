@@ -1,6 +1,6 @@
-import { VehicleI } from "../../../entities/vehicles/model/types.ts"
+import { VehicleI } from "../../../../../entities/vehicles/model/types.ts"
 import { VehicleFilterSliceT } from "../store/vehicleFilterSlice.ts"
-import { SelectFilteredVehiclesT } from "../../../pages/pageVehicles/selectFilteredVehicles.ts"
+import { SelectFilteredVehiclesT } from "../../../selectFilteredVehicles.ts"
 
 export const vehiclesFilterFunction = (
 	vehicles: VehicleI[],
