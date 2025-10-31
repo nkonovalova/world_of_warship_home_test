@@ -11,11 +11,11 @@ export const vehiclesFilterFunction = (
 	availableNations: Set<string>
 } => {
 	const typesSet = new Set(filters.types)
-	const availableTypes = new Set()
+	const availableTypes = new Set<string>()
 	const levelsSet = new Set(filters.levels)
-	const availableLevels = new Set()
+	const availableLevels = new Set<number>()
 	const nationsSet = new Set(filters.nations)
-	const availableNations = new Set()
+	const availableNations = new Set<string>()
 	const filteredVehicles: VehicleI[] = vehicles.filter(vehicle => {
 		const vehicleType = vehicle.tags?.[0] || ""
 		const isLevelOk = levelsSet.size === 0 || levelsSet.has(vehicle?.level)

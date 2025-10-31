@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react"
 type LazyImagePropsT = {
 	src: string
 	alt: string
+	className: string
 }
 
 function LazyImage({ src, alt, ...restProps }: LazyImagePropsT) {
-	const [imageSrc, setImageSrc] = useState<string | null>(null)
+	const [imageSrc, setImageSrc] = useState<string | undefined>(undefined)
 	const imgRef = useRef<HTMLImageElement>(null)
 
 	useEffect(() => {

@@ -20,22 +20,24 @@ const VehicleList = React.memo(
 		return (
 			<ul className={styles.vehicleList}>
 				{vehicles.map(vehicle => {
-					const vehicleNation = nations ? nations[vehicle?.nation || ""] : null
+					const vehicleNation = nations ? nations[vehicle?.nation ?? ""] : null
 					const vehicleType = vehicleTypes
-						? vehicleTypes[vehicle?.tags[0] || ""]
+						? vehicleTypes[vehicle?.tags?.[0] ?? ""]
 						: null
 					return (
 						<li className={styles.vehicleItem} key={vehicle.id}>
 							<VehicleCard
 								id={vehicle.id}
 								level={vehicle.level}
-								vehicleType={vehicle?.tags[0] || ""}
-								nation={vehicle?.nation || ""}
-								name={vehicle.localization?.mark[language] || ""}
-								description={vehicle.localization?.description[language] || ""}
-								nationIconUrl={vehicleNation?.icons?.tiny || ""}
-								vehicleTypeIconUrl={vehicleType?.icons?.default || ""}
-								vehicleIconUrl={vehicle.icons?.large || ""}
+								vehicleType={vehicle?.tags?.[0] ?? ""}
+								nation={vehicle?.nation ?? ""}
+								name={vehicle.localization?.mark?.[language] ?? ""}
+								description={
+									vehicle.localization?.description?.[language] ?? ""
+								}
+								nationIconUrl={vehicleNation?.icons?.tiny ?? ""}
+								vehicleTypeIconUrl={vehicleType?.icons?.default ?? ""}
+								vehicleIconUrl={vehicle.icons?.large ?? ""}
 								mediaPath={mediaPath}
 							/>
 						</li>

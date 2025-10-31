@@ -11,7 +11,7 @@ export const nationsApiSlice = createApi({
 			query: () => API_NATIONS_URL,
 			providesTags: ["nations"],
 			transformResponse: (response: NationsApiResponseT) => {
-				return response.data.reduce((acc, nation) => {
+				return response.data.reduce<Record<string, NationI>>((acc, nation) => {
 					acc[nation.name] = nation
 					return acc
 				}, {})
