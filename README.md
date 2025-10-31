@@ -1,27 +1,128 @@
-# vite-template-redux
+# ⚓ World of Warships ships explorer
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+A frontend application for exploring and filtering ships data from the **World of Warships** public API.  
+The app provides a convenient interface to browse ships, view their basic characteristics, and search by name.
 
-```sh
-npx tiged reduxjs/redux-templates/packages/vite-template-redux my-app
+---
+
+## 🧭 Table of Contents
+
+- [About the Project](#-about-the-project)
+- [Tech Stack](#-tech-stack)
+- [Project Architecture](#-project-architecture)
+- [Installation](#-installation)
+- [Available Scripts](#-available-scripts)
+- [Usage](#-usage)
+- [TODO](#-todo)
+- [Author](#-author)
+
+---
+
+## 📖 About the Project
+
+This project is a frontend SPA built with **React**, **Redux Toolkit**, and **TypeScript**.  
+It interacts with the **World of Warships Encyclopedia API**, retrieves information about ships, and allows users to:
+
+- View ships list with images and basic data
+- Filter ships by nation, type and level
+- Search ships by name
+
+Project's API methods are located in file **WoW_API.yaml**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** React, TypeScript
+- **State Management:** Redux Toolkit, RTK Query
+- **Styling:** SASS/SCSS
+- **Testing Tool:** Testing Library
+- **Build Tool:** Vite
+- **Linting & Formatting:** ESLint, Prettier
+
+---
+
+## 📁 Project Architecture
+
+Project architecture base on [Feature Sliced Design](https://feature-sliced.design/)
+
+## ⚙️ Installation
+
+### Prerequisites
+Make sure you have installed:
+- Node.js >= 18
+- npm or yarn
+
+### Steps
+
+```
+# 1. Install dependencies
+npm install
+# or
+yarn install
+
+# 2. Start the development server
+npm run dev
+
+# 3. Start the api server
+npm run api-server
+
 ```
 
-## Goals
+## 🧪 Available Scripts
+```
+npm run dev             # Start development server
+npm run build           # Build the project for production
+npm run preview         # Locally preview production build
+npm run api-server      # Start development API server
+npm run lint            # Run ESLint
+npm run format:check    # Run prettier for checking
+npm run format          # Format code with Prettier
+npm run test:           # Launch test runner
+npm run type-check      # Check types problem
+```
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+## 💡 Usage
+When running locally, the app will be available at:
+```
+http://localhost:5173
+```
 
-## Scripts
+Local API server will be available at:
+```
+http://localhos:3003
+```
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+API url set on .env files:
+```
+.env.development
+.env.production
+```
 
-## Inspiration
+You can:
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+- Browse the ships list
+
+- Use the search input to find ships by name
+
+- Filter by nation, type and level
+
+In production mode app fetches data from:
+```
+https://vortex.worldofwarships.eu/api/encyclopedia/en/
+```
+
+## ✅ TODO
+
+- [ ] Implement pagination or virtual scrolling for long lists
+
+- [ ] Add multilanguage
+
+- [ ] Add ship's page
+
+- [ ] Write unit tests for selectors and components
+
+## 👩‍💻 Author
+
+Natalia Konovalova | Frontend Developer |
+[GitHub](https://github.com/nkonovalova)
